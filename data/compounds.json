@@ -1,242 +1,538 @@
 [
   {
-    "id": "water",
-    "name": "水",
-    "nameEn": "Water",
-    "formula": "H2O",
-    "elements": { "H": 2, "O": 1 },
-    "category": "基本"
-  },
-  {
-    "id": "hydrogen_peroxide",
-    "name": "過酸化水素",
-    "nameEn": "Hydrogen Peroxide",
-    "formula": "H2O2",
-    "elements": { "H": 2, "O": 2 },
-    "category": "基本"
-  },
-  {
-    "id": "carbon_dioxide",
-    "name": "二酸化炭素",
-    "nameEn": "Carbon Dioxide",
-    "formula": "CO2",
-    "elements": { "C": 1, "O": 2 },
-    "category": "基本"
-  },
-  {
-    "id": "carbon_monoxide",
-    "name": "一酸化炭素",
-    "nameEn": "Carbon Monoxide",
-    "formula": "CO",
-    "elements": { "C": 1, "O": 1 },
-    "category": "基本"
+    "id": "methane",
+    "number": 16,
+    "points": 16,
+    "name": "メタン",
+    "formula": "CH4",
+    "elements": { "C": 1, "H": 4 }
   },
   {
     "id": "ammonia",
+    "number": 17,
+    "points": 17,
     "name": "アンモニア",
-    "nameEn": "Ammonia",
     "formula": "NH3",
-    "elements": { "N": 1, "H": 3 },
-    "category": "基本"
+    "elements": { "N": 1, "H": 3 }
   },
   {
-    "id": "methane",
-    "name": "メタン",
-    "nameEn": "Methane",
-    "formula": "CH4",
-    "elements": { "C": 1, "H": 4 },
-    "category": "基本"
+    "id": "water",
+    "number": 18,
+    "points": 18,
+    "name": "水",
+    "formula": "H2O",
+    "elements": { "H": 2, "O": 1 }
   },
   {
-    "id": "ethanol",
-    "name": "エタノール",
-    "nameEn": "Ethanol",
-    "formula": "C2H5OH",
-    "elements": { "C": 2, "H": 6, "O": 1 },
-    "category": "有機"
+    "id": "hydrogen_fluoride",
+    "number": 20,
+    "points": 20,
+    "name": "フッ化水素",
+    "formula": "HF",
+    "elements": { "H": 1, "F": 1 }
   },
   {
-    "id": "glucose",
-    "name": "グルコース",
-    "nameEn": "Glucose",
-    "formula": "C6H12O6",
-    "elements": { "C": 6, "H": 12, "O": 6 },
-    "category": "有機"
+    "id": "beryllium_oxide",
+    "number": 25,
+    "points": 25,
+    "name": "酸化ベリリウム",
+    "formula": "BeO",
+    "elements": { "Be": 1, "O": 1 }
   },
   {
-    "id": "sodium_chloride",
-    "name": "塩化ナトリウム",
-    "nameEn": "Sodium Chloride",
-    "formula": "NaCl",
-    "elements": { "Na": 1, "Cl": 1 },
-    "category": "塩"
+    "id": "acetylene",
+    "number": 26,
+    "points": 26,
+    "name": "アセチレン",
+    "formula": "C2H2",
+    "elements": { "C": 2, "H": 2 }
   },
   {
-    "id": "sodium_hydroxide",
-    "name": "水酸化ナトリウム",
-    "nameEn": "Sodium Hydroxide",
-    "formula": "NaOH",
-    "elements": { "Na": 1, "O": 1, "H": 1 },
-    "category": "塩基"
-  },
-  {
-    "id": "hydrochloric_acid",
-    "name": "塩化水素",
-    "nameEn": "Hydrochloric Acid",
-    "formula": "HCl",
-    "elements": { "H": 1, "Cl": 1 },
-    "category": "酸"
-  },
-  {
-    "id": "sulfuric_acid",
-    "name": "硫酸",
-    "nameEn": "Sulfuric Acid",
-    "formula": "H2SO4",
-    "elements": { "H": 2, "S": 1, "O": 4 },
-    "category": "酸"
-  },
-  {
-    "id": "nitric_acid",
-    "name": "硝酸",
-    "nameEn": "Nitric Acid",
-    "formula": "HNO3",
-    "elements": { "H": 1, "N": 1, "O": 3 },
-    "category": "酸"
-  },
-  {
-    "id": "iron_oxide",
-    "name": "酸化鉄",
-    "nameEn": "Iron Oxide",
-    "formula": "Fe2O3",
-    "elements": { "Fe": 2, "O": 3 },
-    "category": "酸化物"
-  },
-  {
-    "id": "calcium_carbonate",
-    "name": "炭酸カルシウム",
-    "nameEn": "Calcium Carbonate",
-    "formula": "CaCO3",
-    "elements": { "Ca": 1, "C": 1, "O": 3 },
-    "category": "塩"
-  },
-  {
-    "id": "magnesium_oxide",
-    "name": "酸化マグネシウム",
-    "nameEn": "Magnesium Oxide",
-    "formula": "MgO",
-    "elements": { "Mg": 1, "O": 1 },
-    "category": "酸化物"
-  },
-  {
-    "id": "copper_sulfate",
-    "name": "硫酸銅",
-    "nameEn": "Copper Sulfate",
-    "formula": "CuSO4",
-    "elements": { "Cu": 1, "S": 1, "O": 4 },
-    "category": "塩"
-  },
-  {
-    "id": "silicon_dioxide",
-    "name": "二酸化ケイ素",
-    "nameEn": "Silicon Dioxide",
-    "formula": "SiO2",
-    "elements": { "Si": 1, "O": 2 },
-    "category": "酸化物"
-  },
-  {
-    "id": "phosphoric_acid",
-    "name": "リン酸",
-    "nameEn": "Phosphoric Acid",
-    "formula": "H3PO4",
-    "elements": { "H": 3, "P": 1, "O": 4 },
-    "category": "酸"
-  },
-  {
-    "id": "potassium_permanganate",
-    "name": "過マンガン酸カリウム",
-    "nameEn": "Potassium Permanganate",
-    "formula": "KMnO4",
-    "elements": { "K": 1, "Mn": 1, "O": 4 },
-    "category": "塩"
-  },
-  {
-    "id": "silver_nitrate",
-    "name": "硝酸銀",
-    "nameEn": "Silver Nitrate",
-    "formula": "AgNO3",
-    "elements": { "Ag": 1, "N": 1, "O": 3 },
-    "category": "塩"
-  },
-  {
-    "id": "zinc_oxide",
-    "name": "酸化亜鉛",
-    "nameEn": "Zinc Oxide",
-    "formula": "ZnO",
-    "elements": { "Zn": 1, "O": 1 },
-    "category": "酸化物"
-  },
-  {
-    "id": "aluminum_oxide",
-    "name": "酸化アルミニウム",
-    "nameEn": "Aluminum Oxide",
-    "formula": "Al2O3",
-    "elements": { "Al": 2, "O": 3 },
-    "category": "酸化物"
-  },
-  {
-    "id": "ozone",
-    "name": "オゾン",
-    "nameEn": "Ozone",
-    "formula": "O3",
-    "elements": { "O": 3 },
-    "category": "基本"
-  },
-  {
-    "id": "hydrogen",
-    "name": "水素分子",
-    "nameEn": "Hydrogen Gas",
-    "formula": "H2",
-    "elements": { "H": 2 },
-    "category": "基本"
+    "id": "hydrogen_cyanide",
+    "number": 27,
+    "points": 27,
+    "name": "シアン化水素",
+    "formula": "HCN",
+    "elements": { "H": 1, "C": 1, "N": 1 }
   },
   {
     "id": "nitrogen",
-    "name": "窒素分子",
-    "nameEn": "Nitrogen Gas",
+    "number": 28,
+    "points": 28,
+    "name": "窒素",
     "formula": "N2",
-    "elements": { "N": 2 },
-    "category": "基本"
+    "elements": { "N": 2 }
+  },
+  {
+    "id": "carbon_monoxide",
+    "number": 28,
+    "points": 28,
+    "name": "一酸化炭素",
+    "formula": "CO",
+    "elements": { "C": 1, "O": 1 },
+    "todo": true,
+    "todo_note": "画像読み取りでは'二酸化炭素'だが、分子量28はCO(一酸化炭素)。44番エントリと名称が入れ替わっている可能性あり。要画像再確認"
+  },
+  {
+    "id": "nitric_oxide",
+    "number": 30,
+    "points": 30,
+    "name": "一酸化窒素",
+    "formula": "NO",
+    "elements": { "N": 1, "O": 1 }
   },
   {
     "id": "oxygen",
-    "name": "酸素分子",
-    "nameEn": "Oxygen Gas",
+    "number": 32,
+    "points": 32,
+    "name": "酸素",
     "formula": "O2",
-    "elements": { "O": 2 },
-    "category": "基本"
+    "elements": { "O": 2 }
   },
   {
-    "id": "chlorine",
-    "name": "塩素分子",
-    "nameEn": "Chlorine Gas",
-    "formula": "Cl2",
-    "elements": { "Cl": 2 },
-    "category": "基本"
+    "id": "hydrazine",
+    "number": 32,
+    "points": 32,
+    "name": "ヒドラジン",
+    "formula": "N2H4",
+    "elements": { "N": 2, "H": 4 }
+  },
+  {
+    "id": "hydrogen_peroxide",
+    "number": 34,
+    "points": 34,
+    "name": "過酸化水素",
+    "formula": "H2O2",
+    "elements": { "H": 2, "O": 2 }
+  },
+  {
+    "id": "hydrogen_sulfide",
+    "number": 34,
+    "points": 34,
+    "name": "硫化水素",
+    "formula": "H2S",
+    "elements": { "H": 2, "S": 1 }
+  },
+  {
+    "id": "hydrogen_chloride",
+    "number": 36,
+    "points": 36,
+    "name": "塩化水素",
+    "formula": "HCl",
+    "elements": { "H": 1, "Cl": 1 }
+  },
+  {
+    "id": "fluorine",
+    "number": 38,
+    "points": 38,
+    "name": "フッ素",
+    "formula": "F2",
+    "elements": { "F": 2 }
+  },
+  {
+    "id": "sodium_hydroxide",
+    "number": 40,
+    "points": 40,
+    "name": "水酸化ナトリウム",
+    "formula": "NaOH",
+    "elements": { "Na": 1, "O": 1, "H": 1 }
+  },
+  {
+    "id": "magnesium_oxide",
+    "number": 40,
+    "points": 40,
+    "name": "酸化マグネシウム",
+    "formula": "MgO",
+    "elements": { "Mg": 1, "O": 1 }
+  },
+  {
+    "id": "aluminum_nitride",
+    "number": 41,
+    "points": 41,
+    "name": "アルミナナイトライド",
+    "formula": "AlN",
+    "elements": { "Al": 1, "N": 1 }
+  },
+  {
+    "id": "sodium_fluoride",
+    "number": 42,
+    "points": 42,
+    "name": "フッ化ナトリウム",
+    "formula": "NaF",
+    "elements": { "Na": 1, "F": 1 }
+  },
+  {
+    "id": "carbon_dioxide",
+    "number": 44,
+    "points": 44,
+    "name": "二酸化炭素",
+    "formula": "CO2",
+    "elements": { "C": 1, "O": 2 },
+    "todo": true,
+    "todo_note": "画像読み取りでは'一酸化炭素'だが、分子量44はCO2(二酸化炭素)。28番エントリと名称が入れ替わっている可能性あり。要画像再確認"
+  },
+  {
+    "id": "nitrogen_dioxide",
+    "number": 46,
+    "points": 46,
+    "name": "二酸化窒素",
+    "formula": "NO2",
+    "elements": { "N": 1, "O": 2 }
+  },
+  {
+    "id": "ozone",
+    "number": 48,
+    "points": 48,
+    "name": "オゾン",
+    "formula": "O3",
+    "elements": { "O": 3 }
+  },
+  {
+    "id": "sodium_cyanide",
+    "number": 49,
+    "points": 49,
+    "name": "シアン化ナトリウム",
+    "formula": "NaCN",
+    "elements": { "Na": 1, "C": 1, "N": 1 }
+  },
+  {
+    "id": "unknown_52",
+    "number": 52,
+    "points": 52,
+    "name": "???",
+    "formula": "???",
+    "elements": {},
+    "todo": true,
+    "todo_note": "画像判読不可（'セックスフ'と読み取られたが化学名として不明）。分子量52の候補: Cr(クロム)=51.996≈52"
+  },
+  {
+    "id": "ammonium_chloride",
+    "number": 53,
+    "points": 53,
+    "name": "塩化アンモニウム",
+    "formula": "NH4Cl",
+    "elements": { "N": 1, "H": 4, "Cl": 1 }
+  },
+  {
+    "id": "calcium_oxide",
+    "number": 56,
+    "points": 56,
+    "name": "酸化カルシウム",
+    "formula": "CaO",
+    "elements": { "Ca": 1, "O": 1 }
+  },
+  {
+    "id": "potassium_hydroxide",
+    "number": 56,
+    "points": 56,
+    "name": "水酸化カリウム",
+    "formula": "KOH",
+    "elements": { "K": 1, "O": 1, "H": 1 }
+  },
+  {
+    "id": "sodium_chloride",
+    "number": 58,
+    "points": 58,
+    "name": "塩化ナトリウム",
+    "formula": "NaCl",
+    "elements": { "Na": 1, "Cl": 1 }
+  },
+  {
+    "id": "diamond",
+    "number": 60,
+    "points": 60,
+    "name": "ダイヤモンド",
+    "formula": "C5",
+    "elements": { "C": 5 },
+    "todo": true,
+    "todo_note": "ダイヤモンドは純粋炭素。分子量60=C×5で合算。ゲーム内の必要原子数(C×5か否か)を要確認"
   },
   {
     "id": "acetic_acid",
+    "number": 60,
+    "points": 60,
     "name": "酢酸",
-    "nameEn": "Acetic Acid",
     "formula": "CH3COOH",
-    "elements": { "C": 2, "H": 4, "O": 2 },
-    "category": "有機"
+    "elements": { "C": 2, "H": 4, "O": 2 }
   },
   {
-    "id": "benzene",
-    "name": "ベンゼン",
-    "nameEn": "Benzene",
-    "formula": "C6H6",
-    "elements": { "C": 6, "H": 6 },
-    "category": "有機"
+    "id": "carbonic_acid",
+    "number": 62,
+    "points": 62,
+    "name": "炭酸",
+    "formula": "H2CO3",
+    "elements": { "H": 2, "C": 1, "O": 3 }
+  },
+  {
+    "id": "nitric_acid",
+    "number": 63,
+    "points": 63,
+    "name": "硝酸",
+    "formula": "HNO3",
+    "elements": { "H": 1, "N": 1, "O": 3 }
+  },
+  {
+    "id": "sulfur_dioxide",
+    "number": 64,
+    "points": 64,
+    "name": "二酸化硫黄",
+    "formula": "SO2",
+    "elements": { "S": 1, "O": 2 }
+  },
+  {
+    "id": "unknown_65",
+    "number": 65,
+    "points": 65,
+    "name": "フッ化カルシウム",
+    "formula": "???",
+    "elements": {},
+    "todo": true,
+    "todo_note": "画像では'フッ化カルシウム(CaF2)'と読み取られたが、CaF2の分子量は78で不一致。78番にも同名あり。番号または化合物名の読み間違いの可能性"
+  },
+  {
+    "id": "steel",
+    "number": 68,
+    "points": 68,
+    "name": "鋼",
+    "formula": "FeC",
+    "elements": { "Fe": 1, "C": 1 },
+    "todo": true,
+    "todo_note": "鋼はFe+C合金。Fe(56)+C(12)=68で分子量一致。ゲーム内の必要原子数を要確認"
+  },
+  {
+    "id": "chlorine",
+    "number": 71,
+    "points": 71,
+    "name": "塩素",
+    "formula": "Cl2",
+    "elements": { "Cl": 2 }
+  },
+  {
+    "id": "iron_oxide_ii",
+    "number": 72,
+    "points": 72,
+    "name": "酸化鉄",
+    "formula": "FeO",
+    "elements": { "Fe": 1, "O": 1 }
+  },
+  {
+    "id": "beryllium_copper",
+    "number": 73,
+    "points": 73,
+    "name": "ベリリウム銅",
+    "formula": "BeCu",
+    "elements": { "Be": 1, "Cu": 1 },
+    "todo": true,
+    "todo_note": "合金。Be(9)+Cu(64)=73で分子量一致。ゲーム内の必要原子数を要確認"
+  },
+  {
+    "id": "calcium_hydroxide",
+    "number": 74,
+    "points": 74,
+    "name": "水酸化カルシウム",
+    "formula": "Ca(OH)2",
+    "elements": { "Ca": 1, "O": 2, "H": 2 }
+  },
+  {
+    "id": "potassium_chloride",
+    "number": 75,
+    "points": 75,
+    "name": "塩化カリウム",
+    "formula": "KCl",
+    "elements": { "K": 1, "Cl": 1 }
+  },
+  {
+    "id": "carbon_disulfide",
+    "number": 76,
+    "points": 76,
+    "name": "二硫化炭素",
+    "formula": "CS2",
+    "elements": { "C": 1, "S": 2 }
+  },
+  {
+    "id": "calcium_fluoride",
+    "number": 78,
+    "points": 78,
+    "name": "フッ化カルシウム",
+    "formula": "CaF2",
+    "elements": { "Ca": 1, "F": 2 }
+  },
+  {
+    "id": "beryllium_chloride",
+    "number": 80,
+    "points": 80,
+    "name": "塩化ベリリウム",
+    "formula": "BeCl2",
+    "elements": { "Be": 1, "Cl": 2 }
+  },
+  {
+    "id": "copper_oxide",
+    "number": 80,
+    "points": 80,
+    "name": "酸化銅",
+    "formula": "CuO",
+    "elements": { "Cu": 1, "O": 1 }
+  },
+  {
+    "id": "sulfur_trioxide",
+    "number": 80,
+    "points": 80,
+    "name": "三酸化硫黄",
+    "formula": "SO3",
+    "elements": { "S": 1, "O": 3 },
+    "todo": true,
+    "todo_note": "画像では'二酸化硫黄'と読み取られたが、分子量80はSO3(三酸化硫黄)。SO2(二酸化硫黄)は64番に存在。名称の読み間違いの可能性"
+  },
+  {
+    "id": "zinc_oxide",
+    "number": 81,
+    "points": 81,
+    "name": "酸化亜鉛",
+    "formula": "ZnO",
+    "elements": { "Zn": 1, "O": 1 }
+  },
+  {
+    "id": "sodium_bicarbonate",
+    "number": 84,
+    "points": 84,
+    "name": "炭酸水素ナトリウム",
+    "formula": "NaHCO3",
+    "elements": { "Na": 1, "H": 1, "C": 1, "O": 3 }
+  },
+  {
+    "id": "iron_sulfide_ii",
+    "number": 88,
+    "points": 88,
+    "name": "硫化鉄(II)",
+    "formula": "FeS",
+    "elements": { "Fe": 1, "S": 1 }
+  },
+  {
+    "id": "nigari",
+    "number": 95,
+    "points": 95,
+    "name": "にがり",
+    "formula": "MgCl2",
+    "elements": { "Mg": 1, "Cl": 2 }
+  },
+  {
+    "id": "zinc_sulfide",
+    "number": 97,
+    "points": 97,
+    "name": "硫化亜鉛",
+    "formula": "ZnS",
+    "elements": { "Zn": 1, "S": 1 }
+  },
+  {
+    "id": "sulfuric_acid",
+    "number": 98,
+    "points": 98,
+    "name": "硫酸",
+    "formula": "H2SO4",
+    "elements": { "H": 2, "S": 1, "O": 4 }
+  },
+  {
+    "id": "ptfe",
+    "number": 100,
+    "points": 100,
+    "name": "ポリテトラフルオロエチレン",
+    "formula": "C2F4",
+    "elements": { "C": 2, "F": 4 },
+    "todo": true,
+    "todo_note": "PTFEの最小繰り返し単位C2F4(MW=100)を採用。ゲーム内の必要原子数を要確認"
+  },
+  {
+    "id": "calcium_carbonate",
+    "number": 100,
+    "points": 100,
+    "name": "炭酸カルシウム",
+    "formula": "CaCO3",
+    "elements": { "Ca": 1, "C": 1, "O": 3 }
+  },
+  {
+    "id": "potassium_nitrate",
+    "number": 101,
+    "points": 101,
+    "name": "硝酸カリウム",
+    "formula": "KNO3",
+    "elements": { "K": 1, "N": 1, "O": 3 }
+  },
+  {
+    "id": "unknown_102",
+    "number": 102,
+    "points": 102,
+    "name": "???",
+    "formula": "???",
+    "elements": {},
+    "todo": true,
+    "todo_note": "画像判読不可。分子量102の候補: MoO(96+16=112?)、SnF2(119+38=157?)など。要実機確認"
+  },
+  {
+    "id": "sodium_carbonate",
+    "number": 106,
+    "points": 106,
+    "name": "炭酸ナトリウム",
+    "formula": "Na2CO3",
+    "elements": { "Na": 2, "C": 1, "O": 3 }
+  },
+  {
+    "id": "freon_12",
+    "number": 121,
+    "points": 121,
+    "name": "フロンガス",
+    "formula": "CCl2F2",
+    "elements": { "C": 1, "Cl": 2, "F": 2 },
+    "todo": true,
+    "todo_note": "フロン-12(CCl2F2, MW≈120.9≈121)を採用。ゲーム内の種類・必要原子数を要確認"
+  },
+  {
+    "id": "iron_chloride_ii",
+    "number": 127,
+    "points": 127,
+    "name": "塩化鉄(II)",
+    "formula": "FeCl2",
+    "elements": { "Fe": 1, "Cl": 2 }
+  },
+  {
+    "id": "brass",
+    "number": 129,
+    "points": 129,
+    "name": "真鍮",
+    "formula": "CuZn",
+    "elements": { "Cu": 1, "Zn": 1 },
+    "todo": true,
+    "todo_note": "真鍮はCu+Zn合金。Cu(64)+Zn(65)=129で分子量一致。ゲーム内の必要原子数を要確認"
+  },
+  {
+    "id": "aluminum_chloride",
+    "number": 133,
+    "points": 133,
+    "name": "塩化アルミニウム",
+    "formula": "AlCl3",
+    "elements": { "Al": 1, "Cl": 3 }
+  },
+  {
+    "id": "copper_chloride_ii",
+    "number": 134,
+    "points": 134,
+    "name": "塩化銅",
+    "formula": "CuCl2",
+    "elements": { "Cu": 1, "Cl": 2 }
+  },
+  {
+    "id": "zinc_chloride",
+    "number": 136,
+    "points": 136,
+    "name": "塩化亜鉛",
+    "formula": "ZnCl2",
+    "elements": { "Zn": 1, "Cl": 2 }
+  },
+  {
+    "id": "potassium_carbonate",
+    "number": 138,
+    "points": 138,
+    "name": "炭酸カリウム",
+    "formula": "K2CO3",
+    "elements": { "K": 2, "C": 1, "O": 3 }
   }
 ]
