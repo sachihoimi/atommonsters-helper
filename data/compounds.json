@@ -7,9 +7,7 @@
     "formula": "H2",
     "elements": { "H": 2 },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/H2.jpeg",
-    "todo": true,
-    "todo_note": "ポスターリスト未記載。ゲーム内での位置付け要確認"
+    "image": "assets/Atomon_basic/Compounds/H2.jpeg"
   },
   {
     "id": "methane",
@@ -252,16 +250,14 @@
     "image": "assets/Atomon_green/Compounds/NaCN.jpeg"
   },
   {
-    "id": "coHNa_unknown",
+    "id": "soap",
     "number": 52,
     "points": 52,
-    "name": "???",
+    "name": "セッケン",
     "formula": "COHNa",
     "elements": { "C": 1, "O": 1, "H": 1, "Na": 1 },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/COHNa.jpeg",
-    "todo": true,
-    "todo_note": "画像ファイル名COHNa(C+O+H+Na=52)から特定。ゲーム内の正式名称要確認"
+    "image": "assets/Atomon_green/Compounds/COHNa.jpeg"
   },
   {
     "id": "ammonium_chloride",
@@ -331,9 +327,7 @@
     "formula": "H2CO3",
     "elements": { "H": 2, "C": 1, "O": 3 },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/H2CO2.jpeg",
-    "todo": true,
-    "todo_note": "画像ファイル名がH2CO2.jpegだが炭酸はH2CO3。アセット側のファイル名誤り疑い"
+    "image": "assets/Atomon_basic/Compounds/H2CO3.jpeg"
   },
   {
     "id": "nitric_acid",
