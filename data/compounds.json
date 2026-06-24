@@ -99,9 +99,7 @@
     "formula": "CO",
     "elements": { "C": 1, "O": 1 },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/CO.jpeg",
-    "todo": true,
-    "todo_note": "ポスターでは'二酸化炭素'と読み取られたが分子量28はCO。44番エントリとの名称入れ替わり疑い"
+    "image": "assets/Atomon_basic/Compounds/CO.jpeg"
   },
   {
     "id": "nitric_oxide",
@@ -221,9 +219,7 @@
     "formula": "CO2",
     "elements": { "C": 1, "O": 2 },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/CO2.jpeg",
-    "todo": true,
-    "todo_note": "ポスターでは'一酸化炭素'と読み取られたが分子量44はCO2。28番エントリとの名称入れ替わり疑い"
+    "image": "assets/Atomon_basic/Compounds/CO2.jpeg"
   },
   {
     "id": "nitrogen_dioxide",
@@ -315,9 +311,7 @@
     "formula": "C5",
     "elements": { "C": 5 },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/C5.png",
-    "todo": true,
-    "todo_note": "分子量60=C×5で合算。ゲーム内必要原子数要確認"
+    "image": "assets/Atomon_basic/Compounds/C5.png"
   },
   {
     "id": "acetic_acid",
@@ -369,9 +363,7 @@
     "formula": "KCN",
     "elements": { "K": 1, "C": 1, "N": 1 },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/KCN.png",
-    "todo": true,
-    "todo_note": "ポスターでは'フッ化カルシウム'と読み取られたが、KCN(K+C+N=65)が正解と判断。ゲーム内名称要確認"
+    "image": "assets/Atomon_purple/Compounds/KCN.png"
   },
   {
     "id": "steel",
@@ -381,9 +373,7 @@
     "formula": "FeC",
     "elements": { "Fe": 1, "C": 1 },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/FeC.jpeg",
-    "todo": true,
-    "todo_note": "Fe+C=68で合算。ゲーム内必要原子数要確認"
+    "image": "assets/Atomon_basic/Compounds/FeC.jpeg"
   },
   {
     "id": "chlorine",
@@ -413,9 +403,7 @@
     "formula": "BeCu",
     "elements": { "Be": 1, "Cu": 1 },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/BeCu.png",
-    "todo": true,
-    "todo_note": "合金。Be+Cu=73で合算。ゲーム内必要原子数要確認"
+    "image": "assets/Atomon_purple/Compounds/BeCu.png"
   },
   {
     "id": "calcium_hydroxide",
@@ -485,9 +473,7 @@
     "formula": "SO3",
     "elements": { "S": 1, "O": 3 },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/SO3.jpeg",
-    "todo": true,
-    "todo_note": "ポスターでは'二酸化硫黄'と読み取られたが分子量80はSO3(三酸化硫黄)。64番SO2と区別要確認"
+    "image": "assets/Atomon_green/Compounds/SO3.jpeg"
   },
   {
     "id": "zinc_oxide",
@@ -497,9 +483,7 @@
     "formula": "ZnO",
     "elements": { "Zn": 1, "O": 1 },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Atoms/ZnO.png",
-    "todo": true,
-    "todo_note": "画像がAtoms/フォルダに誤配置。Compounds/への移動推奨"
+    "image": "assets/Atomon_purple/Compounds/ZnO.png"
   },
   {
     "id": "sodium_bicarbonate",
@@ -539,9 +523,7 @@
     "formula": "ZnS",
     "elements": { "Zn": 1, "S": 1 },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Atoms/ZnS.png",
-    "todo": true,
-    "todo_note": "画像がAtoms/フォルダに誤配置。Compounds/への移動推奨"
+    "image": "assets/Atomon_purple/Compounds/ZnS.png"
   },
   {
     "id": "sulfuric_acid",
@@ -561,9 +543,7 @@
     "formula": "C2F4",
     "elements": { "C": 2, "F": 4 },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/C2F4.png",
-    "todo": true,
-    "todo_note": "最小繰り返し単位C2F4(MW=100)を採用。ゲーム内必要原子数要確認"
+    "image": "assets/Atomon_purple/Compounds/C2F4.png"
   },
   {
     "id": "calcium_carbonate",
@@ -593,9 +573,7 @@
     "formula": "Al2O3",
     "elements": { "Al": 2, "O": 3 },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/Al2O3.jpeg",
-    "todo": true,
-    "todo_note": "画像ファイル名Al2O3から特定。ポスターでは判読不可だった102番エントリ"
+    "image": "assets/Atomon_green/Compounds/Al2O3.jpeg"
   },
   {
     "id": "sodium_carbonate",
@@ -615,9 +593,7 @@
     "formula": "CCl2F2",
     "elements": { "C": 1, "Cl": 2, "F": 2 },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/CCl2F2.png",
-    "todo": true,
-    "todo_note": "フロン-12(CCl2F2, MW≈121)を採用。ゲーム内種類・必要原子数要確認"
+    "image": "assets/Atomon_purple/Compounds/CCl2F2.png"
   },
   {
     "id": "iron_chloride_ii",
@@ -637,9 +613,7 @@
     "formula": "CuZn",
     "elements": { "Cu": 1, "Zn": 1 },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Atoms/ZnCu.png",
-    "todo": true,
-    "todo_note": "合金。Cu+Zn=129。画像がAtoms/フォルダに誤配置(ZnCu.png)"
+    "image": "assets/Atomon_purple/Compounds/ZnCu.png"
   },
   {
     "id": "aluminum_chloride",
@@ -669,9 +643,7 @@
     "formula": "ZnCl2",
     "elements": { "Zn": 1, "Cl": 2 },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Atoms/ZnCl2.png",
-    "todo": true,
-    "todo_note": "画像がAtoms/フォルダに誤配置。Compounds/への移動推奨"
+    "image": "assets/Atomon_purple/Compounds/ZnCl2.png"
   },
   {
     "id": "potassium_carbonate",
