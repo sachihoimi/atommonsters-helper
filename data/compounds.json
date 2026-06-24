@@ -1,0 +1,242 @@
+[
+  {
+    "id": "water",
+    "name": "水",
+    "nameEn": "Water",
+    "formula": "H2O",
+    "elements": { "H": 2, "O": 1 },
+    "category": "基本"
+  },
+  {
+    "id": "hydrogen_peroxide",
+    "name": "過酸化水素",
+    "nameEn": "Hydrogen Peroxide",
+    "formula": "H2O2",
+    "elements": { "H": 2, "O": 2 },
+    "category": "基本"
+  },
+  {
+    "id": "carbon_dioxide",
+    "name": "二酸化炭素",
+    "nameEn": "Carbon Dioxide",
+    "formula": "CO2",
+    "elements": { "C": 1, "O": 2 },
+    "category": "基本"
+  },
+  {
+    "id": "carbon_monoxide",
+    "name": "一酸化炭素",
+    "nameEn": "Carbon Monoxide",
+    "formula": "CO",
+    "elements": { "C": 1, "O": 1 },
+    "category": "基本"
+  },
+  {
+    "id": "ammonia",
+    "name": "アンモニア",
+    "nameEn": "Ammonia",
+    "formula": "NH3",
+    "elements": { "N": 1, "H": 3 },
+    "category": "基本"
+  },
+  {
+    "id": "methane",
+    "name": "メタン",
+    "nameEn": "Methane",
+    "formula": "CH4",
+    "elements": { "C": 1, "H": 4 },
+    "category": "基本"
+  },
+  {
+    "id": "ethanol",
+    "name": "エタノール",
+    "nameEn": "Ethanol",
+    "formula": "C2H5OH",
+    "elements": { "C": 2, "H": 6, "O": 1 },
+    "category": "有機"
+  },
+  {
+    "id": "glucose",
+    "name": "グルコース",
+    "nameEn": "Glucose",
+    "formula": "C6H12O6",
+    "elements": { "C": 6, "H": 12, "O": 6 },
+    "category": "有機"
+  },
+  {
+    "id": "sodium_chloride",
+    "name": "塩化ナトリウム",
+    "nameEn": "Sodium Chloride",
+    "formula": "NaCl",
+    "elements": { "Na": 1, "Cl": 1 },
+    "category": "塩"
+  },
+  {
+    "id": "sodium_hydroxide",
+    "name": "水酸化ナトリウム",
+    "nameEn": "Sodium Hydroxide",
+    "formula": "NaOH",
+    "elements": { "Na": 1, "O": 1, "H": 1 },
+    "category": "塩基"
+  },
+  {
+    "id": "hydrochloric_acid",
+    "name": "塩化水素",
+    "nameEn": "Hydrochloric Acid",
+    "formula": "HCl",
+    "elements": { "H": 1, "Cl": 1 },
+    "category": "酸"
+  },
+  {
+    "id": "sulfuric_acid",
+    "name": "硫酸",
+    "nameEn": "Sulfuric Acid",
+    "formula": "H2SO4",
+    "elements": { "H": 2, "S": 1, "O": 4 },
+    "category": "酸"
+  },
+  {
+    "id": "nitric_acid",
+    "name": "硝酸",
+    "nameEn": "Nitric Acid",
+    "formula": "HNO3",
+    "elements": { "H": 1, "N": 1, "O": 3 },
+    "category": "酸"
+  },
+  {
+    "id": "iron_oxide",
+    "name": "酸化鉄",
+    "nameEn": "Iron Oxide",
+    "formula": "Fe2O3",
+    "elements": { "Fe": 2, "O": 3 },
+    "category": "酸化物"
+  },
+  {
+    "id": "calcium_carbonate",
+    "name": "炭酸カルシウム",
+    "nameEn": "Calcium Carbonate",
+    "formula": "CaCO3",
+    "elements": { "Ca": 1, "C": 1, "O": 3 },
+    "category": "塩"
+  },
+  {
+    "id": "magnesium_oxide",
+    "name": "酸化マグネシウム",
+    "nameEn": "Magnesium Oxide",
+    "formula": "MgO",
+    "elements": { "Mg": 1, "O": 1 },
+    "category": "酸化物"
+  },
+  {
+    "id": "copper_sulfate",
+    "name": "硫酸銅",
+    "nameEn": "Copper Sulfate",
+    "formula": "CuSO4",
+    "elements": { "Cu": 1, "S": 1, "O": 4 },
+    "category": "塩"
+  },
+  {
+    "id": "silicon_dioxide",
+    "name": "二酸化ケイ素",
+    "nameEn": "Silicon Dioxide",
+    "formula": "SiO2",
+    "elements": { "Si": 1, "O": 2 },
+    "category": "酸化物"
+  },
+  {
+    "id": "phosphoric_acid",
+    "name": "リン酸",
+    "nameEn": "Phosphoric Acid",
+    "formula": "H3PO4",
+    "elements": { "H": 3, "P": 1, "O": 4 },
+    "category": "酸"
+  },
+  {
+    "id": "potassium_permanganate",
+    "name": "過マンガン酸カリウム",
+    "nameEn": "Potassium Permanganate",
+    "formula": "KMnO4",
+    "elements": { "K": 1, "Mn": 1, "O": 4 },
+    "category": "塩"
+  },
+  {
+    "id": "silver_nitrate",
+    "name": "硝酸銀",
+    "nameEn": "Silver Nitrate",
+    "formula": "AgNO3",
+    "elements": { "Ag": 1, "N": 1, "O": 3 },
+    "category": "塩"
+  },
+  {
+    "id": "zinc_oxide",
+    "name": "酸化亜鉛",
+    "nameEn": "Zinc Oxide",
+    "formula": "ZnO",
+    "elements": { "Zn": 1, "O": 1 },
+    "category": "酸化物"
+  },
+  {
+    "id": "aluminum_oxide",
+    "name": "酸化アルミニウム",
+    "nameEn": "Aluminum Oxide",
+    "formula": "Al2O3",
+    "elements": { "Al": 2, "O": 3 },
+    "category": "酸化物"
+  },
+  {
+    "id": "ozone",
+    "name": "オゾン",
+    "nameEn": "Ozone",
+    "formula": "O3",
+    "elements": { "O": 3 },
+    "category": "基本"
+  },
+  {
+    "id": "hydrogen",
+    "name": "水素分子",
+    "nameEn": "Hydrogen Gas",
+    "formula": "H2",
+    "elements": { "H": 2 },
+    "category": "基本"
+  },
+  {
+    "id": "nitrogen",
+    "name": "窒素分子",
+    "nameEn": "Nitrogen Gas",
+    "formula": "N2",
+    "elements": { "N": 2 },
+    "category": "基本"
+  },
+  {
+    "id": "oxygen",
+    "name": "酸素分子",
+    "nameEn": "Oxygen Gas",
+    "formula": "O2",
+    "elements": { "O": 2 },
+    "category": "基本"
+  },
+  {
+    "id": "chlorine",
+    "name": "塩素分子",
+    "nameEn": "Chlorine Gas",
+    "formula": "Cl2",
+    "elements": { "Cl": 2 },
+    "category": "基本"
+  },
+  {
+    "id": "acetic_acid",
+    "name": "酢酸",
+    "nameEn": "Acetic Acid",
+    "formula": "CH3COOH",
+    "elements": { "C": 2, "H": 4, "O": 2 },
+    "category": "有機"
+  },
+  {
+    "id": "benzene",
+    "name": "ベンゼン",
+    "nameEn": "Benzene",
+    "formula": "C6H6",
+    "elements": { "C": 6, "H": 6 },
+    "category": "有機"
+  }
+]

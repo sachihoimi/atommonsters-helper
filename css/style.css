@@ -1,0 +1,209 @@
+/* ATOMMONSTERS Helper - Styles */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0f0f1a;
+  --surface: #1a1a2e;
+  --surface2: #16213e;
+  --accent: #00d4ff;
+  --accent2: #ff6b35;
+  --almost: #ffd700;
+  --green: #00ff88;
+  --text: #e0e0e0;
+  --text-muted: #888;
+  --radius: 10px;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  max-width: 480px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+/* ヘッダー */
+header {
+  background: var(--surface);
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid var(--accent);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+header h1 {
+  font-size: 1.1rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+header p { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+/* セクション */
+section {
+  padding: 0.75rem;
+  margin: 0.5rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+}
+section h2 {
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.badge {
+  background: var(--accent);
+  color: #000;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 99px;
+  font-weight: bold;
+}
+
+/* 原子ボタングリッド */
+#atom-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+}
+
+.atom-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.atom-btn {
+  width: 100%;
+  padding: 0.5rem 0;
+  background: var(--surface2);
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.atom-btn:active { transform: scale(0.93); background: var(--accent); color: #000; }
+
+.atom-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  min-width: 1.5rem;
+  text-align: center;
+}
+.atom-count.has-count { color: var(--accent); font-weight: bold; }
+
+.atom-minus {
+  font-size: 0.8rem;
+  background: none;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: var(--text-muted);
+  padding: 0.1rem 0.5rem;
+  cursor: pointer;
+}
+.atom-minus:active { background: #444; }
+
+/* 化合物カード */
+ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+
+.compound-card {
+  background: var(--surface2);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  border-left: 3px solid transparent;
+}
+.compound-card.available { border-color: var(--green); }
+.compound-card.almost { border-color: var(--almost); }
+.compound-card.unavailable { border-color: #444; }
+
+.compound-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.compound-name { font-size: 0.9rem; font-weight: bold; }
+.compound-formula {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-family: monospace;
+  white-space: nowrap;
+}
+.compound-elements {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+.missing-info {
+  font-size: 0.72rem;
+  margin-top: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.missing-el {
+  background: rgba(255, 107, 53, 0.2);
+  color: var(--accent2);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.empty-msg { color: var(--text-muted); font-size: 0.8rem; text-align: center; padding: 0.5rem; }
+
+/* しきい値セレクタ */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.controls select {
+  background: var(--surface2);
+  color: var(--text);
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.8rem;
+}
+
+/* 逆引き検索 */
+#search-input {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: var(--text);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+#search-input::placeholder { color: var(--text-muted); }
+#search-input:focus { outline: 1px solid var(--accent); }
+
+/* リセットボタン */
+#reset-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: none;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+#reset-btn:active { background: #333; }

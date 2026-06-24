@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="theme-color" content="#0f0f1a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>ATOMMONSTERS 化合物ヘルパー</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header>
+  <h1>⚗ ATOMMONSTERS Helper</h1>
+  <p>所持原子をタップして化合物を検索</p>
+</header>
+
+<!-- 原子選択 -->
+<section>
+  <h2>原子を選択</h2>
+  <div id="atom-buttons"></div>
+  <button id="reset-btn">リセット</button>
+</section>
+
+<!-- 作成可能 -->
+<section>
+  <h2>
+    ✅ 作成可能
+    <span class="badge" id="available-count">0</span>
+  </h2>
+  <ul id="available-list"><li class="empty-msg">原子を選択してください</li></ul>
+</section>
+
+<!-- あと少し -->
+<section>
+  <h2>
+    ⚡ あと少し！
+    <span class="badge" id="almost-count">0</span>
+  </h2>
+  <div class="controls">
+    不足
+    <select id="threshold-select">
+      <option value="1">1個以内</option>
+      <option value="2">2個以内</option>
+      <option value="3">3個以内</option>
+    </select>
+    で作れる化合物
+  </div>
+  <ul id="almost-list"><li class="empty-msg">なし</li></ul>
+</section>
+
+<!-- 未作成 -->
+<section>
+  <h2>🔒 不足あり（不足数順）</h2>
+  <ul id="unavailable-list"><li class="empty-msg">なし</li></ul>
+</section>
+
+<!-- 逆引き検索 -->
+<section>
+  <h2>🔍 元素逆引き</h2>
+  <input
+    id="search-input"
+    type="text"
+    placeholder="例: H O  または  Fe  （スペース区切りで複数可）"
+    autocomplete="off"
+    autocorrect="off"
+    spellcheck="false"
+  />
+  <ul id="reverse-results"></ul>
+</section>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
