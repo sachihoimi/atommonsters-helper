@@ -1,11 +1,25 @@
 [
   {
+    "id": "hydrogen_gas",
+    "number": 2,
+    "points": 2,
+    "name": "水素",
+    "formula": "H2",
+    "elements": { "H": 2 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/H2.jpeg",
+    "todo": true,
+    "todo_note": "ポスターリスト未記載。ゲーム内での位置付け要確認"
+  },
+  {
     "id": "methane",
     "number": 16,
     "points": 16,
     "name": "メタン",
     "formula": "CH4",
-    "elements": { "C": 1, "H": 4 }
+    "elements": { "C": 1, "H": 4 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/CH4.jpeg"
   },
   {
     "id": "ammonia",
@@ -13,7 +27,9 @@
     "points": 17,
     "name": "アンモニア",
     "formula": "NH3",
-    "elements": { "N": 1, "H": 3 }
+    "elements": { "N": 1, "H": 3 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/NH3.jpeg"
   },
   {
     "id": "water",
@@ -21,7 +37,9 @@
     "points": 18,
     "name": "水",
     "formula": "H2O",
-    "elements": { "H": 2, "O": 1 }
+    "elements": { "H": 2, "O": 1 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/H2O.jpeg"
   },
   {
     "id": "hydrogen_fluoride",
@@ -29,7 +47,9 @@
     "points": 20,
     "name": "フッ化水素",
     "formula": "HF",
-    "elements": { "H": 1, "F": 1 }
+    "elements": { "H": 1, "F": 1 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/HF.png"
   },
   {
     "id": "beryllium_oxide",
@@ -37,7 +57,9 @@
     "points": 25,
     "name": "酸化ベリリウム",
     "formula": "BeO",
-    "elements": { "Be": 1, "O": 1 }
+    "elements": { "Be": 1, "O": 1 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/BeO.png"
   },
   {
     "id": "acetylene",
@@ -45,7 +67,9 @@
     "points": 26,
     "name": "アセチレン",
     "formula": "C2H2",
-    "elements": { "C": 2, "H": 2 }
+    "elements": { "C": 2, "H": 2 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/C2H2.jpeg"
   },
   {
     "id": "hydrogen_cyanide",
@@ -53,7 +77,9 @@
     "points": 27,
     "name": "シアン化水素",
     "formula": "HCN",
-    "elements": { "H": 1, "C": 1, "N": 1 }
+    "elements": { "H": 1, "C": 1, "N": 1 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/HCN.jpeg"
   },
   {
     "id": "nitrogen",
@@ -61,7 +87,9 @@
     "points": 28,
     "name": "窒素",
     "formula": "N2",
-    "elements": { "N": 2 }
+    "elements": { "N": 2 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/N2.jpeg"
   },
   {
     "id": "carbon_monoxide",
@@ -70,8 +98,10 @@
     "name": "一酸化炭素",
     "formula": "CO",
     "elements": { "C": 1, "O": 1 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/CO.jpeg",
     "todo": true,
-    "todo_note": "画像読み取りでは'二酸化炭素'だが、分子量28はCO(一酸化炭素)。44番エントリと名称が入れ替わっている可能性あり。要画像再確認"
+    "todo_note": "ポスターでは'二酸化炭素'と読み取られたが分子量28はCO。44番エントリとの名称入れ替わり疑い"
   },
   {
     "id": "nitric_oxide",
@@ -79,7 +109,9 @@
     "points": 30,
     "name": "一酸化窒素",
     "formula": "NO",
-    "elements": { "N": 1, "O": 1 }
+    "elements": { "N": 1, "O": 1 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/NO.jpeg"
   },
   {
     "id": "oxygen",
@@ -87,7 +119,9 @@
     "points": 32,
     "name": "酸素",
     "formula": "O2",
-    "elements": { "O": 2 }
+    "elements": { "O": 2 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/O2.jpeg"
   },
   {
     "id": "hydrazine",
@@ -95,7 +129,9 @@
     "points": 32,
     "name": "ヒドラジン",
     "formula": "N2H4",
-    "elements": { "N": 2, "H": 4 }
+    "elements": { "N": 2, "H": 4 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/N2H4.jpeg"
   },
   {
     "id": "hydrogen_peroxide",
@@ -103,7 +139,9 @@
     "points": 34,
     "name": "過酸化水素",
     "formula": "H2O2",
-    "elements": { "H": 2, "O": 2 }
+    "elements": { "H": 2, "O": 2 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/H2O2.jpeg"
   },
   {
     "id": "hydrogen_sulfide",
@@ -111,7 +149,9 @@
     "points": 34,
     "name": "硫化水素",
     "formula": "H2S",
-    "elements": { "H": 2, "S": 1 }
+    "elements": { "H": 2, "S": 1 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/H2S.jpeg"
   },
   {
     "id": "hydrogen_chloride",
@@ -119,7 +159,9 @@
     "points": 36,
     "name": "塩化水素",
     "formula": "HCl",
-    "elements": { "H": 1, "Cl": 1 }
+    "elements": { "H": 1, "Cl": 1 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/HCl.jpeg"
   },
   {
     "id": "fluorine",
@@ -127,7 +169,9 @@
     "points": 38,
     "name": "フッ素",
     "formula": "F2",
-    "elements": { "F": 2 }
+    "elements": { "F": 2 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/F2.png"
   },
   {
     "id": "sodium_hydroxide",
@@ -135,7 +179,9 @@
     "points": 40,
     "name": "水酸化ナトリウム",
     "formula": "NaOH",
-    "elements": { "Na": 1, "O": 1, "H": 1 }
+    "elements": { "Na": 1, "O": 1, "H": 1 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/NaOH.jpeg"
   },
   {
     "id": "magnesium_oxide",
@@ -143,7 +189,9 @@
     "points": 40,
     "name": "酸化マグネシウム",
     "formula": "MgO",
-    "elements": { "Mg": 1, "O": 1 }
+    "elements": { "Mg": 1, "O": 1 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/MgO.jpeg"
   },
   {
     "id": "aluminum_nitride",
@@ -151,7 +199,9 @@
     "points": 41,
     "name": "アルミナナイトライド",
     "formula": "AlN",
-    "elements": { "Al": 1, "N": 1 }
+    "elements": { "Al": 1, "N": 1 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/AlN.jpeg"
   },
   {
     "id": "sodium_fluoride",
@@ -159,7 +209,9 @@
     "points": 42,
     "name": "フッ化ナトリウム",
     "formula": "NaF",
-    "elements": { "Na": 1, "F": 1 }
+    "elements": { "Na": 1, "F": 1 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/NaF.png"
   },
   {
     "id": "carbon_dioxide",
@@ -168,8 +220,10 @@
     "name": "二酸化炭素",
     "formula": "CO2",
     "elements": { "C": 1, "O": 2 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/CO2.jpeg",
     "todo": true,
-    "todo_note": "画像読み取りでは'一酸化炭素'だが、分子量44はCO2(二酸化炭素)。28番エントリと名称が入れ替わっている可能性あり。要画像再確認"
+    "todo_note": "ポスターでは'一酸化炭素'と読み取られたが分子量44はCO2。28番エントリとの名称入れ替わり疑い"
   },
   {
     "id": "nitrogen_dioxide",
@@ -177,7 +231,9 @@
     "points": 46,
     "name": "二酸化窒素",
     "formula": "NO2",
-    "elements": { "N": 1, "O": 2 }
+    "elements": { "N": 1, "O": 2 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/NO2.jpeg"
   },
   {
     "id": "ozone",
@@ -185,7 +241,9 @@
     "points": 48,
     "name": "オゾン",
     "formula": "O3",
-    "elements": { "O": 3 }
+    "elements": { "O": 3 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/O3.jpeg"
   },
   {
     "id": "sodium_cyanide",
@@ -193,17 +251,21 @@
     "points": 49,
     "name": "シアン化ナトリウム",
     "formula": "NaCN",
-    "elements": { "Na": 1, "C": 1, "N": 1 }
+    "elements": { "Na": 1, "C": 1, "N": 1 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/NaCN.jpeg"
   },
   {
-    "id": "unknown_52",
+    "id": "coHNa_unknown",
     "number": 52,
     "points": 52,
     "name": "???",
-    "formula": "???",
-    "elements": {},
+    "formula": "COHNa",
+    "elements": { "C": 1, "O": 1, "H": 1, "Na": 1 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/COHNa.jpeg",
     "todo": true,
-    "todo_note": "画像判読不可（'セックスフ'と読み取られたが化学名として不明）。分子量52の候補: Cr(クロム)=51.996≈52"
+    "todo_note": "画像ファイル名COHNa(C+O+H+Na=52)から特定。ゲーム内の正式名称要確認"
   },
   {
     "id": "ammonium_chloride",
@@ -211,7 +273,9 @@
     "points": 53,
     "name": "塩化アンモニウム",
     "formula": "NH4Cl",
-    "elements": { "N": 1, "H": 4, "Cl": 1 }
+    "elements": { "N": 1, "H": 4, "Cl": 1 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/NH4Cl.jpeg"
   },
   {
     "id": "calcium_oxide",
@@ -219,7 +283,9 @@
     "points": 56,
     "name": "酸化カルシウム",
     "formula": "CaO",
-    "elements": { "Ca": 1, "O": 1 }
+    "elements": { "Ca": 1, "O": 1 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/CaO.png"
   },
   {
     "id": "potassium_hydroxide",
@@ -227,7 +293,9 @@
     "points": 56,
     "name": "水酸化カリウム",
     "formula": "KOH",
-    "elements": { "K": 1, "O": 1, "H": 1 }
+    "elements": { "K": 1, "O": 1, "H": 1 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/KOH.png"
   },
   {
     "id": "sodium_chloride",
@@ -235,7 +303,9 @@
     "points": 58,
     "name": "塩化ナトリウム",
     "formula": "NaCl",
-    "elements": { "Na": 1, "Cl": 1 }
+    "elements": { "Na": 1, "Cl": 1 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/NaCl.jpeg"
   },
   {
     "id": "diamond",
@@ -244,8 +314,10 @@
     "name": "ダイヤモンド",
     "formula": "C5",
     "elements": { "C": 5 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/C5.png",
     "todo": true,
-    "todo_note": "ダイヤモンドは純粋炭素。分子量60=C×5で合算。ゲーム内の必要原子数(C×5か否か)を要確認"
+    "todo_note": "分子量60=C×5で合算。ゲーム内必要原子数要確認"
   },
   {
     "id": "acetic_acid",
@@ -253,7 +325,9 @@
     "points": 60,
     "name": "酢酸",
     "formula": "CH3COOH",
-    "elements": { "C": 2, "H": 4, "O": 2 }
+    "elements": { "C": 2, "H": 4, "O": 2 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/CH3COOH.jpeg"
   },
   {
     "id": "carbonic_acid",
@@ -261,7 +335,11 @@
     "points": 62,
     "name": "炭酸",
     "formula": "H2CO3",
-    "elements": { "H": 2, "C": 1, "O": 3 }
+    "elements": { "H": 2, "C": 1, "O": 3 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/H2CO2.jpeg",
+    "todo": true,
+    "todo_note": "画像ファイル名がH2CO2.jpegだが炭酸はH2CO3。アセット側のファイル名誤り疑い"
   },
   {
     "id": "nitric_acid",
@@ -269,7 +347,9 @@
     "points": 63,
     "name": "硝酸",
     "formula": "HNO3",
-    "elements": { "H": 1, "N": 1, "O": 3 }
+    "elements": { "H": 1, "N": 1, "O": 3 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/HNO3.jpeg"
   },
   {
     "id": "sulfur_dioxide",
@@ -277,17 +357,21 @@
     "points": 64,
     "name": "二酸化硫黄",
     "formula": "SO2",
-    "elements": { "S": 1, "O": 2 }
+    "elements": { "S": 1, "O": 2 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/SO2.jpeg"
   },
   {
-    "id": "unknown_65",
+    "id": "potassium_cyanide",
     "number": 65,
     "points": 65,
-    "name": "フッ化カルシウム",
-    "formula": "???",
-    "elements": {},
+    "name": "シアン化カリウム",
+    "formula": "KCN",
+    "elements": { "K": 1, "C": 1, "N": 1 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/KCN.png",
     "todo": true,
-    "todo_note": "画像では'フッ化カルシウム(CaF2)'と読み取られたが、CaF2の分子量は78で不一致。78番にも同名あり。番号または化合物名の読み間違いの可能性"
+    "todo_note": "ポスターでは'フッ化カルシウム'と読み取られたが、KCN(K+C+N=65)が正解と判断。ゲーム内名称要確認"
   },
   {
     "id": "steel",
@@ -296,8 +380,10 @@
     "name": "鋼",
     "formula": "FeC",
     "elements": { "Fe": 1, "C": 1 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/FeC.jpeg",
     "todo": true,
-    "todo_note": "鋼はFe+C合金。Fe(56)+C(12)=68で分子量一致。ゲーム内の必要原子数を要確認"
+    "todo_note": "Fe+C=68で合算。ゲーム内必要原子数要確認"
   },
   {
     "id": "chlorine",
@@ -305,7 +391,9 @@
     "points": 71,
     "name": "塩素",
     "formula": "Cl2",
-    "elements": { "Cl": 2 }
+    "elements": { "Cl": 2 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/Cl2.jpeg"
   },
   {
     "id": "iron_oxide_ii",
@@ -313,7 +401,9 @@
     "points": 72,
     "name": "酸化鉄",
     "formula": "FeO",
-    "elements": { "Fe": 1, "O": 1 }
+    "elements": { "Fe": 1, "O": 1 },
+    "pack": "basic",
+    "image": "assets/Atomon_basic/Compounds/FeO.jpeg"
   },
   {
     "id": "beryllium_copper",
@@ -322,8 +412,10 @@
     "name": "ベリリウム銅",
     "formula": "BeCu",
     "elements": { "Be": 1, "Cu": 1 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/BeCu.png",
     "todo": true,
-    "todo_note": "合金。Be(9)+Cu(64)=73で分子量一致。ゲーム内の必要原子数を要確認"
+    "todo_note": "合金。Be+Cu=73で合算。ゲーム内必要原子数要確認"
   },
   {
     "id": "calcium_hydroxide",
@@ -331,7 +423,9 @@
     "points": 74,
     "name": "水酸化カルシウム",
     "formula": "Ca(OH)2",
-    "elements": { "Ca": 1, "O": 2, "H": 2 }
+    "elements": { "Ca": 1, "O": 2, "H": 2 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/CaOH2.png"
   },
   {
     "id": "potassium_chloride",
@@ -339,7 +433,9 @@
     "points": 75,
     "name": "塩化カリウム",
     "formula": "KCl",
-    "elements": { "K": 1, "Cl": 1 }
+    "elements": { "K": 1, "Cl": 1 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/KCl.png"
   },
   {
     "id": "carbon_disulfide",
@@ -347,7 +443,9 @@
     "points": 76,
     "name": "二硫化炭素",
     "formula": "CS2",
-    "elements": { "C": 1, "S": 2 }
+    "elements": { "C": 1, "S": 2 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/CS2.jpeg"
   },
   {
     "id": "calcium_fluoride",
@@ -355,7 +453,9 @@
     "points": 78,
     "name": "フッ化カルシウム",
     "formula": "CaF2",
-    "elements": { "Ca": 1, "F": 2 }
+    "elements": { "Ca": 1, "F": 2 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/CaF2.png"
   },
   {
     "id": "beryllium_chloride",
@@ -363,7 +463,9 @@
     "points": 80,
     "name": "塩化ベリリウム",
     "formula": "BeCl2",
-    "elements": { "Be": 1, "Cl": 2 }
+    "elements": { "Be": 1, "Cl": 2 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/BeCl2.png"
   },
   {
     "id": "copper_oxide",
@@ -371,7 +473,9 @@
     "points": 80,
     "name": "酸化銅",
     "formula": "CuO",
-    "elements": { "Cu": 1, "O": 1 }
+    "elements": { "Cu": 1, "O": 1 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/CuO.jpeg"
   },
   {
     "id": "sulfur_trioxide",
@@ -380,8 +484,10 @@
     "name": "三酸化硫黄",
     "formula": "SO3",
     "elements": { "S": 1, "O": 3 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/SO3.jpeg",
     "todo": true,
-    "todo_note": "画像では'二酸化硫黄'と読み取られたが、分子量80はSO3(三酸化硫黄)。SO2(二酸化硫黄)は64番に存在。名称の読み間違いの可能性"
+    "todo_note": "ポスターでは'二酸化硫黄'と読み取られたが分子量80はSO3(三酸化硫黄)。64番SO2と区別要確認"
   },
   {
     "id": "zinc_oxide",
@@ -389,7 +495,11 @@
     "points": 81,
     "name": "酸化亜鉛",
     "formula": "ZnO",
-    "elements": { "Zn": 1, "O": 1 }
+    "elements": { "Zn": 1, "O": 1 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Atoms/ZnO.png",
+    "todo": true,
+    "todo_note": "画像がAtoms/フォルダに誤配置。Compounds/への移動推奨"
   },
   {
     "id": "sodium_bicarbonate",
@@ -397,7 +507,9 @@
     "points": 84,
     "name": "炭酸水素ナトリウム",
     "formula": "NaHCO3",
-    "elements": { "Na": 1, "H": 1, "C": 1, "O": 3 }
+    "elements": { "Na": 1, "H": 1, "C": 1, "O": 3 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/NaHCO3.jpeg"
   },
   {
     "id": "iron_sulfide_ii",
@@ -405,7 +517,9 @@
     "points": 88,
     "name": "硫化鉄(II)",
     "formula": "FeS",
-    "elements": { "Fe": 1, "S": 1 }
+    "elements": { "Fe": 1, "S": 1 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/FeS.jpeg"
   },
   {
     "id": "nigari",
@@ -413,7 +527,9 @@
     "points": 95,
     "name": "にがり",
     "formula": "MgCl2",
-    "elements": { "Mg": 1, "Cl": 2 }
+    "elements": { "Mg": 1, "Cl": 2 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/MgCl2.jpeg"
   },
   {
     "id": "zinc_sulfide",
@@ -421,7 +537,11 @@
     "points": 97,
     "name": "硫化亜鉛",
     "formula": "ZnS",
-    "elements": { "Zn": 1, "S": 1 }
+    "elements": { "Zn": 1, "S": 1 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Atoms/ZnS.png",
+    "todo": true,
+    "todo_note": "画像がAtoms/フォルダに誤配置。Compounds/への移動推奨"
   },
   {
     "id": "sulfuric_acid",
@@ -429,7 +549,9 @@
     "points": 98,
     "name": "硫酸",
     "formula": "H2SO4",
-    "elements": { "H": 2, "S": 1, "O": 4 }
+    "elements": { "H": 2, "S": 1, "O": 4 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/H2SO4.jpeg"
   },
   {
     "id": "ptfe",
@@ -438,8 +560,10 @@
     "name": "ポリテトラフルオロエチレン",
     "formula": "C2F4",
     "elements": { "C": 2, "F": 4 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/C2F4.png",
     "todo": true,
-    "todo_note": "PTFEの最小繰り返し単位C2F4(MW=100)を採用。ゲーム内の必要原子数を要確認"
+    "todo_note": "最小繰り返し単位C2F4(MW=100)を採用。ゲーム内必要原子数要確認"
   },
   {
     "id": "calcium_carbonate",
@@ -447,7 +571,9 @@
     "points": 100,
     "name": "炭酸カルシウム",
     "formula": "CaCO3",
-    "elements": { "Ca": 1, "C": 1, "O": 3 }
+    "elements": { "Ca": 1, "C": 1, "O": 3 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/CaCO3.png"
   },
   {
     "id": "potassium_nitrate",
@@ -455,17 +581,21 @@
     "points": 101,
     "name": "硝酸カリウム",
     "formula": "KNO3",
-    "elements": { "K": 1, "N": 1, "O": 3 }
+    "elements": { "K": 1, "N": 1, "O": 3 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/KNO3.png"
   },
   {
-    "id": "unknown_102",
+    "id": "aluminum_oxide",
     "number": 102,
     "points": 102,
-    "name": "???",
-    "formula": "???",
-    "elements": {},
+    "name": "酸化アルミニウム",
+    "formula": "Al2O3",
+    "elements": { "Al": 2, "O": 3 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/Al2O3.jpeg",
     "todo": true,
-    "todo_note": "画像判読不可。分子量102の候補: MoO(96+16=112?)、SnF2(119+38=157?)など。要実機確認"
+    "todo_note": "画像ファイル名Al2O3から特定。ポスターでは判読不可だった102番エントリ"
   },
   {
     "id": "sodium_carbonate",
@@ -473,7 +603,9 @@
     "points": 106,
     "name": "炭酸ナトリウム",
     "formula": "Na2CO3",
-    "elements": { "Na": 2, "C": 1, "O": 3 }
+    "elements": { "Na": 2, "C": 1, "O": 3 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/Na2CO3.jpeg"
   },
   {
     "id": "freon_12",
@@ -482,8 +614,10 @@
     "name": "フロンガス",
     "formula": "CCl2F2",
     "elements": { "C": 1, "Cl": 2, "F": 2 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/CCl2F2.png",
     "todo": true,
-    "todo_note": "フロン-12(CCl2F2, MW≈120.9≈121)を採用。ゲーム内の種類・必要原子数を要確認"
+    "todo_note": "フロン-12(CCl2F2, MW≈121)を採用。ゲーム内種類・必要原子数要確認"
   },
   {
     "id": "iron_chloride_ii",
@@ -491,7 +625,9 @@
     "points": 127,
     "name": "塩化鉄(II)",
     "formula": "FeCl2",
-    "elements": { "Fe": 1, "Cl": 2 }
+    "elements": { "Fe": 1, "Cl": 2 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/FeCl2.jpeg"
   },
   {
     "id": "brass",
@@ -500,8 +636,10 @@
     "name": "真鍮",
     "formula": "CuZn",
     "elements": { "Cu": 1, "Zn": 1 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Atoms/ZnCu.png",
     "todo": true,
-    "todo_note": "真鍮はCu+Zn合金。Cu(64)+Zn(65)=129で分子量一致。ゲーム内の必要原子数を要確認"
+    "todo_note": "合金。Cu+Zn=129。画像がAtoms/フォルダに誤配置(ZnCu.png)"
   },
   {
     "id": "aluminum_chloride",
@@ -509,7 +647,9 @@
     "points": 133,
     "name": "塩化アルミニウム",
     "formula": "AlCl3",
-    "elements": { "Al": 1, "Cl": 3 }
+    "elements": { "Al": 1, "Cl": 3 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/AlCl3.jpeg"
   },
   {
     "id": "copper_chloride_ii",
@@ -517,7 +657,9 @@
     "points": 134,
     "name": "塩化銅",
     "formula": "CuCl2",
-    "elements": { "Cu": 1, "Cl": 2 }
+    "elements": { "Cu": 1, "Cl": 2 },
+    "pack": "green",
+    "image": "assets/Atomon_green/Compounds/CuCl2.jpeg"
   },
   {
     "id": "zinc_chloride",
@@ -525,7 +667,11 @@
     "points": 136,
     "name": "塩化亜鉛",
     "formula": "ZnCl2",
-    "elements": { "Zn": 1, "Cl": 2 }
+    "elements": { "Zn": 1, "Cl": 2 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Atoms/ZnCl2.png",
+    "todo": true,
+    "todo_note": "画像がAtoms/フォルダに誤配置。Compounds/への移動推奨"
   },
   {
     "id": "potassium_carbonate",
@@ -533,6 +679,8 @@
     "points": 138,
     "name": "炭酸カリウム",
     "formula": "K2CO3",
-    "elements": { "K": 2, "C": 1, "O": 3 }
+    "elements": { "K": 2, "C": 1, "O": 3 },
+    "pack": "purple",
+    "image": "assets/Atomon_purple/Compounds/K2CO3.png"
   }
 ]

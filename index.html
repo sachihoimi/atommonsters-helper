@@ -13,8 +13,24 @@
 
 <header>
   <h1>⚗ ATOMMONSTERS Helper</h1>
-  <p>所持原子をタップして化合物を検索</p>
+  <div class="pack-tabs">
+    <button class="pack-tab" data-pack="basic">Basic</button>
+    <button class="pack-tab" data-pack="green">＋Green</button>
+    <button class="pack-tab active" data-pack="purple">＋Purple</button>
+  </div>
 </header>
+
+<!-- スコアサマリー -->
+<div class="score-bar">
+  <div class="score-item">
+    <span class="score-label">獲得可能</span>
+    <span class="score-value" id="total-points">0</span><span class="score-unit">pt</span>
+  </div>
+  <div class="score-item">
+    <span class="score-label">あと少しで</span>
+    <span class="score-value" id="potential-points">0</span><span class="score-unit">pt</span>
+  </div>
+</div>
 
 <!-- 原子選択 -->
 <section>
@@ -45,7 +61,7 @@
       <option value="2">2個以内</option>
       <option value="3">3個以内</option>
     </select>
-    で作れる化合物
+    で作れる
   </div>
   <ul id="almost-list"><li class="empty-msg">なし</li></ul>
 </section>

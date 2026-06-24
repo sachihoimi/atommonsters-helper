@@ -1,0 +1,21 @@
+[
+  { "symbol": "H",  "name": "水素",         "pack": "basic",  "image": "assets/Atomon_basic/Atoms/H.png"    },
+  { "symbol": "He", "name": "ヘリウム",      "pack": "basic",  "image": "assets/Atomon_basic/Atoms/He.png"   },
+  { "symbol": "C",  "name": "炭素",          "pack": "basic",  "image": "assets/Atomon_basic/Atoms/C.png"    },
+  { "symbol": "N",  "name": "窒素",          "pack": "basic",  "image": "assets/Atomon_basic/Atoms/N.png"    },
+  { "symbol": "O",  "name": "酸素",          "pack": "basic",  "image": "assets/Atomon_basic/Atoms/O.png"    },
+  { "symbol": "Fe", "name": "鉄",            "pack": "basic",  "image": "assets/Atomon_basic/Atoms/Fe.png"   },
+  { "symbol": "Na", "name": "ナトリウム",    "pack": "green",  "image": "assets/Atomon_green/Atoms/Na.jpeg"  },
+  { "symbol": "Mg", "name": "マグネシウム",  "pack": "green",  "image": "assets/Atomon_green/Atoms/Mg.jpeg"  },
+  { "symbol": "Al", "name": "アルミニウム",  "pack": "green",  "image": "assets/Atomon_green/Atoms/Al.jpeg"  },
+  { "symbol": "S",  "name": "硫黄",          "pack": "green",  "image": "assets/Atomon_green/Atoms/S.jpeg"   },
+  { "symbol": "Cl", "name": "塩素",          "pack": "green",  "image": "assets/Atomon_green/Atoms/Cl.jpeg"  },
+  { "symbol": "Cu", "name": "銅",            "pack": "green",  "image": "assets/Atomon_green/Atoms/Cu.jpeg"  },
+  { "symbol": "Ne", "name": "ネオン",        "pack": "green",  "image": "assets/Atomon_green/Atoms/Ne.jpeg"  },
+  { "symbol": "Be", "name": "ベリリウム",    "pack": "purple", "image": "assets/Atomon_purple/Atoms/Be.png"  },
+  { "symbol": "F",  "name": "フッ素",        "pack": "purple", "image": "assets/Atomon_purple/Atoms/F.png"   },
+  { "symbol": "K",  "name": "カリウム",      "pack": "purple", "image": "assets/Atomon_purple/Atoms/K.png"   },
+  { "symbol": "Ca", "name": "カルシウム",    "pack": "purple", "image": "assets/Atomon_purple/Atoms/Ca.png"  },
+  { "symbol": "Zn", "name": "亜鉛",          "pack": "purple", "image": "assets/Atomon_purple/Atoms/Zn.png"  },
+  { "symbol": "Ar", "name": "アルゴン",      "pack": "purple", "image": "assets/Atomon_purple/Atoms/Ar.png"  }
+]
