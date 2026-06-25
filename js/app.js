@@ -11,14 +11,35 @@ import {
 const LONG_PRESS_MS = 500;
 const STORAGE_KEY = 'atommonsters_inventory';
 const PACK_KEY    = 'atommonsters_pack';
+const GOTTEN_KEY  = 'atommonsters_gotten';
+const THEME_KEY   = 'atommonsters_theme';
+
+const THEMES      = ['space', 'candy', 'aqua', 'sunshine', 'berry'];
+const THEME_EMOJI = { space: '🌌', candy: '🍭', aqua: '🌊', sunshine: '☀️', berry: '🍇' };
+let activeTheme   = THEMES.includes(localStorage.getItem(THEME_KEY)) ? localStorage.getItem(THEME_KEY) : 'space';
+
+function cycleTheme() {
+  const idx = THEMES.indexOf(activeTheme);
+  activeTheme = THEMES[(idx + 1) % THEMES.length];
+  document.documentElement.dataset.theme = activeTheme;
+  localStorage.setItem(THEME_KEY, activeTheme);
+  document.getElementById('theme-btn').textContent = THEME_EMOJI[activeTheme];
+}
+
+const PACK_ATOMS = {
+  basic:  { H: 10, He: 2, C: 6, N: 5, O: 8, Fe: 1 },
+  green:  { Cl: 7, O: 4, Mg: 1, Ne: 1, Cu: 1, Na: 4, S: 3, Al: 2 },
+  purple: { F: 8, K: 5, Be: 4, Ca: 3, Zn: 3, Ar: 2, Cu: 1 },
+};
 
 const PACK_LEVEL = { basic: 0, green: 1, purple: 2 };
 
-let compounds = [];
-let atoms     = [];
-let inventory = {};
-let activePack   = 'purple';
-let almostThreshold = 1;
+let compounds       = [];
+let atoms           = [];
+let inventory       = {};
+let gottenCompounds = [];
+let activePack      = 'purple';
+const almostThreshold = 99;
 
 // --- 初期化 ---
 
@@ -30,34 +51,79 @@ async function init() {
   compounds = await compoundsRes.json();
   atoms     = await atomsRes.json();
 
-  const savedInv  = localStorage.getItem(STORAGE_KEY);
-  const savedPack = localStorage.getItem(PACK_KEY);
-  if (savedInv)  try { inventory = JSON.parse(savedInv); } catch { inventory = {}; }
-  if (savedPack) activePack = savedPack;
+  const savedInv    = localStorage.getItem(STORAGE_KEY);
+  const savedPack   = localStorage.getItem(PACK_KEY);
+  const savedGotten = localStorage.getItem(GOTTEN_KEY);
+  if (savedInv)    try { inventory = JSON.parse(savedInv); } catch { inventory = {}; }
+  if (savedPack)   activePack = savedPack;
+  if (savedGotten) try { gottenCompounds = JSON.parse(savedGotten); } catch { gottenCompounds = []; }
 
-  // パック選択タブ
-  document.querySelectorAll('.pack-tab').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.pack === activePack);
-    btn.addEventListener('click', () => {
-      activePack = btn.dataset.pack;
-      localStorage.setItem(PACK_KEY, activePack);
-      document.querySelectorAll('.pack-tab').forEach(b =>
-        b.classList.toggle('active', b.dataset.pack === activePack)
-      );
-      renderAtomButtons();
-      renderResults();
-    });
-  });
-
-  // しきい値
-  document.getElementById('threshold-select').addEventListener('change', (e) => {
-    almostThreshold = Number(e.target.value);
+  // パック選択
+  const packSelect = document.getElementById('pack-select');
+  packSelect.value = activePack;
+  packSelect.addEventListener('change', () => {
+    activePack = packSelect.value;
+    localStorage.setItem(PACK_KEY, activePack);
+    renderAtomButtons();
     renderResults();
   });
 
   // 逆引き
   document.getElementById('search-input').addEventListener('input', (e) => {
     renderReverseSearch(e.target.value.trim());
+  });
+
+  // ゲットする
+  document.getElementById('available-list').addEventListener('click', (e) => {
+    const btn = e.target.closest('.get-btn');
+    if (btn) getCompound(btn.dataset.id);
+  });
+
+  // 召喚リストモーダル
+  const gottenModal  = document.getElementById('gotten-modal');
+  const confirmModal = document.getElementById('confirm-modal');
+
+  function openGottenModal() { renderGottenModal(); gottenModal.hidden = false; }
+  function openConfirmModal() { confirmModal.hidden = false; }
+  function doInit() {
+    inventory = {};
+    gottenCompounds = [];
+    localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(GOTTEN_KEY);
+    updateAllCounts();
+    renderResults();
+    updateGottenBadge();
+  }
+
+  document.getElementById('gotten-btn').addEventListener('click', openGottenModal);
+  document.getElementById('modal-close').addEventListener('click', () => { gottenModal.hidden = true; });
+  gottenModal.addEventListener('click', (e) => { if (e.target === gottenModal) gottenModal.hidden = true; });
+
+  // 初期化確認
+  document.getElementById('init-btn').addEventListener('click', openConfirmModal);
+  document.getElementById('confirm-cancel').addEventListener('click', () => { confirmModal.hidden = true; });
+  document.getElementById('confirm-ok').addEventListener('click', () => { confirmModal.hidden = true; doInit(); });
+  confirmModal.addEventListener('click', (e) => { if (e.target === confirmModal) confirmModal.hidden = true; });
+
+  // SP メニュー
+  const menuBtn      = document.getElementById('menu-btn');
+  const menuDropdown = document.getElementById('menu-dropdown');
+  menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuDropdown.hidden = !menuDropdown.hidden;
+  });
+  menuDropdown.addEventListener('click', (e) => {
+    const item = e.target.closest('[data-action]');
+    if (!item) return;
+    menuDropdown.hidden = true;
+    if (item.dataset.action === 'gotten') openGottenModal();
+    if (item.dataset.action === 'init')   openConfirmModal();
+    if (item.dataset.action === 'theme')  cycleTheme();
+  });
+  document.addEventListener('click', (e) => {
+    if (!menuDropdown.hidden && !menuDropdown.contains(e.target) && e.target !== menuBtn) {
+      menuDropdown.hidden = true;
+    }
   });
 
   // リセット
@@ -68,8 +134,35 @@ async function init() {
     renderResults();
   });
 
+  document.getElementById('theme-btn').addEventListener('click', cycleTheme);
+  document.getElementById('theme-btn').textContent = THEME_EMOJI[activeTheme];
+
   renderAtomButtons();
   renderResults();
+  updateGottenBadge();
+}
+
+// --- デッキ残数 ---
+
+function computeRemainingAtoms() {
+  const maxInv = getMaxInventory();
+  const consumed = {};
+  for (const c of gottenCompounds) {
+    for (const [el, n] of Object.entries(c.elements)) {
+      consumed[el] = (consumed[el] ?? 0) + n;
+    }
+  }
+  const remaining = {};
+  for (const [el, max] of Object.entries(maxInv)) {
+    remaining[el] = Math.max(0, max - (inventory[el] ?? 0) - (consumed[el] ?? 0));
+  }
+  return remaining;
+}
+
+function isPossibleWithRemaining(compound, inv, remaining) {
+  return Object.entries(compound.elements).every(([el, needed]) =>
+    (inv[el] ?? 0) + (remaining[el] ?? 0) >= needed
+  );
 }
 
 // --- パックフィルタ ---
@@ -78,8 +171,21 @@ function isPackEnabled(pack) {
   return PACK_LEVEL[pack] <= PACK_LEVEL[activePack];
 }
 
+function getMaxInventory() {
+  const max = {};
+  for (const [pack, atoms] of Object.entries(PACK_ATOMS)) {
+    if (isPackEnabled(pack)) {
+      for (const [el, n] of Object.entries(atoms)) {
+        max[el] = (max[el] ?? 0) + n;
+      }
+    }
+  }
+  return max;
+}
+
 function filteredCompounds() {
-  return compounds.filter(c => isPackEnabled(c.pack));
+  const gottenIds = new Set(gottenCompounds.map(c => c.id));
+  return compounds.filter(c => isPackEnabled(c.pack) && !gottenIds.has(c.id));
 }
 
 function filteredAtoms() {
@@ -89,6 +195,7 @@ function filteredAtoms() {
 // --- 原子ボタン描画 ---
 
 function renderAtomButtons() {
+  const remaining = computeRemainingAtoms();
   const container = document.getElementById('atom-buttons');
   container.innerHTML = '';
 
@@ -100,6 +207,7 @@ function renderAtomButtons() {
 
     const btn = document.createElement('button');
     btn.className = 'atom-btn';
+    if ((inventory[symbol] ?? 0) > 0) btn.classList.add('has-count');
     btn.title = atom.name;
 
     if (atom.image) {
@@ -119,10 +227,19 @@ function renderAtomButtons() {
     countEl.id = `count-${symbol}`;
     countEl.textContent = inventory[symbol] ?? 0;
     if ((inventory[symbol] ?? 0) > 0) countEl.classList.add('has-count');
+    btn.appendChild(countEl);
+
+    const remEl = document.createElement('span');
+    remEl.className = 'atom-remaining';
+    remEl.id = `remaining-${symbol}`;
+    const rem = remaining[symbol] ?? 0;
+    remEl.textContent = `残り${rem}`;
+    if (rem === 0) { remEl.classList.add('depleted'); btn.classList.add('no-remaining'); }
+    btn.appendChild(remEl);
 
     const minusBtn = document.createElement('button');
     minusBtn.className = 'atom-minus';
-    minusBtn.textContent = '−';
+    minusBtn.textContent = '− 1';
 
     btn.addEventListener('click', () => changeCount(symbol, 1));
     minusBtn.addEventListener('click', (e) => {
@@ -144,29 +261,102 @@ function renderAtomButtons() {
     btn.addEventListener('pointerleave', () => clearTimeout(pressTimer));
 
     wrap.appendChild(btn);
-    wrap.appendChild(countEl);
     wrap.appendChild(minusBtn);
     container.appendChild(wrap);
   }
 }
 
 function changeCount(el, delta) {
-  inventory[el] = Math.max(0, (inventory[el] ?? 0) + delta);
+  if (delta > 0) {
+    const remaining = computeRemainingAtoms();
+    if ((remaining[el] ?? 0) === 0) return;
+  }
+  const max = getMaxInventory()[el] ?? 99;
+  inventory[el] = Math.min(max, Math.max(0, (inventory[el] ?? 0) + delta));
   updateCount(el);
   renderResults();
   saveInventory();
 }
 
-function updateCount(el) {
-  const el_ = document.getElementById(`count-${el}`);
-  if (el_) {
-    el_.textContent = inventory[el] ?? 0;
-    el_.classList.toggle('has-count', (inventory[el] ?? 0) > 0);
+function getCompound(compoundId) {
+  const compound = compounds.find(c => c.id === compoundId);
+  if (!compound) return;
+  for (const [el, needed] of Object.entries(compound.elements)) {
+    inventory[el] = Math.max(0, (inventory[el] ?? 0) - needed);
   }
+  gottenCompounds.push(compound);
+  saveInventory();
+  localStorage.setItem(GOTTEN_KEY, JSON.stringify(gottenCompounds));
+  updateAllCounts();
+  renderResults();
+  updateGottenBadge();
+}
+
+function updateGottenBadge() {
+  const n = gottenCompounds.length;
+  for (const id of ['gotten-count', 'menu-gotten-count']) {
+    const el = document.getElementById(id);
+    if (el) { el.textContent = n; el.classList.toggle('hidden', n === 0); }
+  }
+}
+
+function renderGottenModal() {
+  // 消費原子を集計
+  const consumed = {};
+  for (const c of gottenCompounds) {
+    for (const [el, n] of Object.entries(c.elements)) {
+      consumed[el] = (consumed[el] ?? 0) + n;
+    }
+  }
+
+  const consumedEl = document.getElementById('consumed-atoms');
+  if (Object.keys(consumed).length === 0) {
+    consumedEl.innerHTML = '<p class="consumed-empty">まだなし</p>';
+  } else {
+    consumedEl.innerHTML =
+      '<p class="consumed-label">消費した原子</p>' +
+      '<div class="consumed-list">' +
+      Object.entries(consumed).map(([el, n]) =>
+        `<span class="consumed-atom">${el}<small>×${n}</small></span>`
+      ).join('') +
+      '</div>';
+  }
+
+  const listEl = document.getElementById('gotten-list');
+  if (gottenCompounds.length === 0) {
+    listEl.innerHTML = '<li class="empty-msg">まだなし 🧪</li>';
+  } else {
+    listEl.innerHTML = gottenCompounds.map(c => compoundCard(c, 'gotten')).join('');
+  }
+}
+
+function updateCount(el) {
+  const n = inventory[el] ?? 0;
+  const countEl = document.getElementById(`count-${el}`);
+  if (countEl) {
+    countEl.textContent = n;
+    countEl.classList.toggle('has-count', n > 0);
+  }
+  const cell = document.querySelector(`.atom-cell[data-el="${el}"]`);
+  cell?.querySelector('.atom-btn')?.classList.toggle('has-count', n > 0);
 }
 
 function updateAllCounts() {
   for (const atom of atoms) updateCount(atom.symbol);
+}
+
+function updateAllRemaining() {
+  const remaining = computeRemainingAtoms();
+  for (const atom of filteredAtoms()) {
+    const remEl = document.getElementById(`remaining-${atom.symbol}`);
+    const rem = remaining[atom.symbol] ?? 0;
+    if (remEl) {
+      remEl.textContent = `残り${rem}`;
+      remEl.classList.toggle('depleted', rem === 0);
+    }
+    const cell = document.querySelector(`.atom-cell[data-el="${atom.symbol}"]`);
+    cell?.querySelector('.atom-btn')?.classList.toggle('no-remaining', rem === 0);
+  }
 }
 
 // --- 結果描画 ---
@@ -178,30 +368,61 @@ function renderResults() {
     visible, norm, almostThreshold
   );
 
-  renderSection('available-list', available, 'available');
-  renderSection('almost-list', almostCraftable, 'almost');
-  renderSection('unavailable-list', unavailable, 'unavailable');
+  const remaining = computeRemainingAtoms();
+  updateAllRemaining();
+
+  const markImpossible = (list) => list.map(c => ({
+    ...c,
+    impossible: !isPossibleWithRemaining(c, norm, remaining),
+  }));
+
+  const hasInventory = Object.values(inventory).some(n => n > 0);
+  const isBust = hasInventory && available.length === 0 &&
+    almostCraftable.every(c => !isPossibleWithRemaining(c, norm, remaining));
+  const allImpossible = visible.length > 0 &&
+    visible.every(c => !isPossibleWithRemaining(c, norm, remaining));
+
+  let availableMsg, availableClass;
+  if (allImpossible) {
+    availableMsg  = 'もう作れる化合物はないよ…<br>ゲームおしまい！';
+    availableClass = 'bust';
+  } else if (!hasInventory) {
+    availableMsg  = '原子を選んでね';
+    availableClass = '';
+  } else if (isBust) {
+    availableMsg  = 'ざんねん！次のひとにバトンタッチ 🙈';
+    availableClass = 'bust';
+  } else if (available.length === 0) {
+    availableMsg  = 'まだないよ！⚡ もう1枚めくってみて';
+    availableClass = '';
+  } else {
+    availableMsg  = '';
+    availableClass = '';
+  }
+
+  const sectionAvailable = document.getElementById('section-available');
+  sectionAvailable.classList.toggle('section-can-take', available.length > 0);
+  sectionAvailable.classList.toggle('section-bust', isBust);
+
+  renderSection('available-list', markImpossible(available), 'available', availableMsg, availableClass);
+  renderSection('almost-list', markImpossible(almostCraftable), 'almost');
+  renderSection('unavailable-list', markImpossible(unavailable), 'unavailable');
 
   document.getElementById('available-count').textContent = available.length;
   document.getElementById('almost-count').textContent   = almostCraftable.length;
-
-  // 合計得点
-  const totalPoints = available.reduce((s, c) => s + c.points, 0);
-  const potentialPoints = [...available, ...almostCraftable].reduce((s, c) => s + c.points, 0);
-  document.getElementById('total-points').textContent     = totalPoints;
-  document.getElementById('potential-points').textContent = potentialPoints;
 }
 
-function renderSection(containerId, items, mode) {
+function renderSection(containerId, items, mode, emptyMsg = 'なし', emptyClass = '') {
   const container = document.getElementById(containerId);
   if (items.length === 0) {
-    container.innerHTML = '<li class="empty-msg">なし</li>';
+    container.innerHTML = `<li class="empty-msg ${emptyClass}">${emptyMsg}</li>`;
     return;
   }
   container.innerHTML = items.map((c) => compoundCard(c, mode)).join('');
 }
 
 function compoundCard(c, mode) {
+  const isImpossible = c.impossible === true;
   const packBadge = `<span class="pack-badge pack-${c.pack}">${c.pack}</span>`;
   const todoMark  = c.todo ? '<span class="todo-mark">?</span>' : '';
 
@@ -209,33 +430,33 @@ function compoundCard(c, mode) {
     ? `<img src="${c.image}" alt="${c.name}" class="compound-img" loading="lazy" />`
     : `<div class="compound-img no-img">?</div>`;
 
-  const elementsStr = Object.entries(c.elements)
-    .map(([el, n]) => `${el}×${n}`)
-    .join(' ');
-
   let extraHtml = '';
   if (mode === 'almost' || mode === 'unavailable') {
     const missingStr = Object.entries(c.missing)
-      .map(([el, n]) => `<span class="missing-el">${el}×${n}</span>`)
+      .flatMap(([el, n]) => Array(n).fill(`<span class="missing-el">${el}</span>`))
       .join('');
-    extraHtml = `<div class="missing-info">不足: ${missingStr}</div>`;
+    extraHtml = `<div class="missing-info"><span class="missing-label">足りない:</span>${missingStr}</div>`;
   }
 
+  const getBtn = (mode === 'available' && !isImpossible)
+    ? `<button class="get-btn" data-id="${c.id}">召喚する</button>`
+    : '';
+
+  const impossibleClass = isImpossible ? ' impossible' : '';
+
   return `
-    <li class="compound-card ${mode}">
+    <li class="compound-card ${mode}${impossibleClass}">
       ${imgHtml}
       <div class="compound-body">
-        <div class="compound-header">
-          <span class="compound-name">${c.name}${todoMark}</span>
-          <span class="compound-pts">${c.points}pt</span>
-        </div>
+        <span class="compound-name">${c.name}${todoMark}</span>
         <div class="compound-sub">
           <span class="compound-formula">${c.formula}</span>
           ${packBadge}
         </div>
-        <div class="compound-elements">${elementsStr}</div>
+        ${getBtn}
         ${extraHtml}
       </div>
+      <span class="compound-pts">${c.points}pt</span>
     </li>`;
 }
 

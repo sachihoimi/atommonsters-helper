@@ -2,89 +2,154 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <meta name="theme-color" content="#0f0f1a" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080812" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <title>ATOMMONSTERS 化合物ヘルパー</title>
+  <title>ATOMMONSTERS Helper</title>
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="css/style.css" />
+  <script>(function(){var t=localStorage.getItem('atommonsters_theme');if(t)document.documentElement.dataset.theme=t;})()</script>
 </head>
 <body>
 
-<header>
-  <h1>⚗ ATOMMONSTERS Helper</h1>
-  <div class="pack-tabs">
-    <button class="pack-tab" data-pack="basic">Basic</button>
-    <button class="pack-tab" data-pack="green">＋Green</button>
-    <button class="pack-tab active" data-pack="purple">＋Purple</button>
+<!-- ヘッダー -->
+<header class="app-header">
+  <div class="header-inner">
+    <h1 class="app-title">
+      <img src="./assets/Atomon_image/icon-b.png" alt="" class="header-icon" />
+      ATOMON HELPER
+    </h1>
+    <div class="header-right">
+      <!-- タブレット/PC のみ表示 -->
+      <div class="header-actions">
+        <button id="gotten-btn" class="header-btn">
+          召喚済みリスト<span id="gotten-count" class="gotten-badge hidden">0</span>
+        </button>
+        <button id="theme-btn" class="header-btn" title="テーマ切替">🌌</button>
+        <button id="init-btn" class="header-btn danger">初期化</button>
+      </div>
+      <select id="pack-select" class="pack-select">
+        <option value="basic">Basic</option>
+        <option value="green">＋Green</option>
+        <option value="purple">＋Purple</option>
+      </select>
+      <!-- SP のみ表示 -->
+      <button id="menu-btn" class="header-btn menu-only">☰</button>
+    </div>
   </div>
 </header>
 
-<!-- スコアサマリー -->
-<div class="score-bar">
-  <div class="score-item">
-    <span class="score-label">獲得可能</span>
-    <span class="score-value" id="total-points">0</span><span class="score-unit">pt</span>
-  </div>
-  <div class="score-item">
-    <span class="score-label">あと少しで</span>
-    <span class="score-value" id="potential-points">0</span><span class="score-unit">pt</span>
+<!-- メインレイアウト -->
+<div class="main-layout">
+
+  <!-- 左パネル: 原子選択 -->
+  <aside class="atom-panel">
+    <div class="panel-head">
+      <h2 class="panel-title"><span>👆</span> めくった原子をタップして！</h2>
+      <button id="reset-btn" class="reset-btn">リセット</button>
+    </div>
+    <div id="atom-buttons" class="atom-grid"></div>
+  </aside>
+
+  <!-- 右パネル: 検索結果 -->
+  <div class="result-panel">
+
+    <!-- 取れる -->
+    <section class="result-section" id="section-available">
+      <div class="section-head">
+        <h2 class="section-title">
+          <span>✅</span> 今すぐ取れる！
+          <span class="count-pill green" id="available-count">0</span>
+        </h2>
+      </div>
+      <ul class="compound-list" id="available-list">
+        <li class="empty-msg">原子を選んでね</li>
+      </ul>
+    </section>
+
+    <!-- もう1枚めくっていい -->
+    <section class="result-section">
+      <div class="section-head">
+        <h2 class="section-title">
+          <span>⚡</span> もう1枚めくっていい！
+          <span class="count-pill yellow" id="almost-count">0</span>
+        </h2>
+      </div>
+      <ul class="compound-list" id="almost-list">
+        <li class="empty-msg">なし</li>
+      </ul>
+    </section>
+
+    <!-- 作れない -->
+    <section class="result-section">
+      <div class="section-head">
+        <h2 class="section-title">
+          <span>🔒</span> 作れない化合物
+          <span class="section-sub">（不足数順）</span>
+        </h2>
+      </div>
+      <ul class="compound-list" id="unavailable-list">
+        <li class="empty-msg">なし</li>
+      </ul>
+    </section>
+
+    <!-- 元素逆引き -->
+    <section class="result-section">
+      <div class="section-head">
+        <h2 class="section-title"><span>🔍</span> 元素から探す</h2>
+      </div>
+      <input
+        id="search-input"
+        class="search-input"
+        type="text"
+        placeholder="例: H  O  Fe（スペース区切りで複数可）"
+        autocomplete="off"
+        autocorrect="off"
+        spellcheck="false"
+      />
+      <ul class="compound-list" id="reverse-results"></ul>
+    </section>
+
   </div>
 </div>
 
-<!-- 原子選択 -->
-<section>
-  <h2>原子を選択</h2>
-  <div id="atom-buttons"></div>
-  <button id="reset-btn">リセット</button>
-</section>
+<!-- SP メニュードロップダウン -->
+<div id="menu-dropdown" class="menu-dropdown" hidden>
+  <button class="menu-item" data-action="gotten">
+    召喚済みリスト<span id="menu-gotten-count" class="gotten-badge hidden">0</span>
+  </button>
+  <button class="menu-item" data-action="theme">🎨 テーマ切替</button>
+  <button class="menu-item danger" data-action="init">初期化</button>
+</div>
 
-<!-- 作成可能 -->
-<section>
-  <h2>
-    ✅ 作成可能
-    <span class="badge" id="available-count">0</span>
-  </h2>
-  <ul id="available-list"><li class="empty-msg">原子を選択してください</li></ul>
-</section>
-
-<!-- あと少し -->
-<section>
-  <h2>
-    ⚡ あと少し！
-    <span class="badge" id="almost-count">0</span>
-  </h2>
-  <div class="controls">
-    不足
-    <select id="threshold-select">
-      <option value="1">1個以内</option>
-      <option value="2">2個以内</option>
-      <option value="3">3個以内</option>
-    </select>
-    で作れる
+<!-- 召喚済みリストモーダル -->
+<div id="gotten-modal" class="modal-overlay" hidden>
+  <div class="modal-sheet">
+    <div class="modal-head">
+      <h2 class="modal-title">🧪 召喚済みリスト</h2>
+      <button id="modal-close" class="modal-close">✕</button>
+    </div>
+    <div id="consumed-atoms" class="consumed-atoms"></div>
+    <ul class="compound-list" id="gotten-list"></ul>
   </div>
-  <ul id="almost-list"><li class="empty-msg">なし</li></ul>
-</section>
+</div>
 
-<!-- 未作成 -->
-<section>
-  <h2>🔒 不足あり（不足数順）</h2>
-  <ul id="unavailable-list"><li class="empty-msg">なし</li></ul>
-</section>
+<!-- 初期化確認モーダル -->
+<div id="confirm-modal" class="modal-overlay" hidden>
+  <div class="modal-sheet confirm-sheet">
+    <p class="confirm-msg">ゲームを初期化しますか？</p>
+    <p class="confirm-sub">召喚リストと原子がすべてリセットされます</p>
+    <div class="confirm-btns">
+      <button id="confirm-cancel" class="header-btn">キャンセル</button>
+      <button id="confirm-ok" class="header-btn danger">初期化する</button>
+    </div>
+  </div>
+</div>
 
-<!-- 逆引き検索 -->
-<section>
-  <h2>🔍 元素逆引き</h2>
-  <input
-    id="search-input"
-    type="text"
-    placeholder="例: H O  または  Fe  （スペース区切りで複数可）"
-    autocomplete="off"
-    autocorrect="off"
-    spellcheck="false"
-  />
-  <ul id="reverse-results"></ul>
-</section>
+<footer class="app-footer">
+  <p>本ツールはタンキュー株式会社のボードゲーム「アトムモンスターズ」の非公式ファンツールです。ゲームに関する著作権・商標権はすべてタンキュー株式会社に帰属します。</p>
+  <p>掲載画像はアトムモンスターズのカード画像を使用しています。権利者からの削除・修正依頼は <a href="https://x.com/u_vf3" target="_blank" rel="noopener">@u_vf3</a> までご連絡ください。速やかに対応いたします。</p>
+</footer>
 
 <script type="module" src="js/app.js"></script>
 </body>

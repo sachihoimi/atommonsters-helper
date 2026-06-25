@@ -46,7 +46,23 @@ export function getMissingElements(compound, inventory) {
 }
 
 /**
- * あとN個以下の不足で作れる化合物か判定する
+ * 今持っている原子が全て化合物に使われるか（余剰・無関係な原子がないか）を確認する
+ * 例: C=1,N=1 でN2を狙うとき C は使われないので false
+ * @param {Object} compound
+ * @param {Object} inventory
+ * @returns {boolean}
+ */
+export function hasNoStrandedAtoms(compound, inventory) {
+  for (const [el, count] of Object.entries(inventory)) {
+    if (count <= 0) continue;
+    const needed = compound.elements[el] ?? 0;
+    if (needed === 0 || count > needed) return false;
+  }
+  return true;
+}
+
+/**
+ * あとN個以下の不足で作れる化合物か判定する（余剰原子がある場合は除外）
  * @param {Object} compound
  * @param {Object} inventory
  * @param {number} threshold - 許容不足数（デフォルト1）
@@ -54,7 +70,7 @@ export function getMissingElements(compound, inventory) {
  */
 export function isAlmostCraftable(compound, inventory, threshold = 1) {
   const shortage = shortageCount(compound, inventory);
-  return shortage > 0 && shortage <= threshold;
+  return shortage > 0 && shortage <= threshold && hasNoStrandedAtoms(compound, inventory);
 }
 
 /**
@@ -135,9 +151,9 @@ export function classifyCompounds(compounds, inventory, almostThreshold = 1) {
 
   for (const c of compounds) {
     const shortage = shortageCount(c, inventory);
-    if (shortage === 0) {
+    if (shortage === 0 && hasNoStrandedAtoms(c, inventory)) {
       available.push(c);
-    } else if (shortage <= almostThreshold) {
+    } else if (shortage <= almostThreshold && hasNoStrandedAtoms(c, inventory)) {
       almostCraftable.push({
         ...c,
         shortage,
