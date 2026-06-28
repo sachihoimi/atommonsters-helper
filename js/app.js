@@ -40,6 +40,7 @@ let inventory       = {};
 let gottenCompounds = [];
 let activePack      = 'purple';
 const almostThreshold = 99;
+const MAX_SUMMON = 2;
 
 // --- 初期化 ---
 
@@ -137,6 +138,17 @@ async function init() {
   document.getElementById('theme-btn').addEventListener('click', cycleTheme);
   document.getElementById('theme-btn').textContent = THEME_EMOJI[activeTheme];
 
+  // 化合物詳細モーダル
+  const detailModal = document.getElementById('detail-modal');
+  document.getElementById('detail-close').addEventListener('click', () => { detailModal.hidden = true; });
+  detailModal.addEventListener('click', (e) => { if (e.target === detailModal) detailModal.hidden = true; });
+  document.addEventListener('click', (e) => {
+    const card = e.target.closest('.compound-card');
+    if (!card || e.target.closest('button')) return;
+    const id = card.dataset.id;
+    if (id) openDetailModal(id);
+  });
+
   renderAtomButtons();
   renderResults();
   updateGottenBadge();
@@ -183,9 +195,14 @@ function getMaxInventory() {
   return max;
 }
 
+function getSummonCount(id) {
+  return gottenCompounds.filter(c => c.id === id).length;
+}
+
 function filteredCompounds() {
-  const gottenIds = new Set(gottenCompounds.map(c => c.id));
-  return compounds.filter(c => isPackEnabled(c.pack) && !gottenIds.has(c.id));
+  return compounds
+    .filter(c => isPackEnabled(c.pack) && getSummonCount(c.id) < MAX_SUMMON)
+    .map(c => ({ ...c, summonRemaining: MAX_SUMMON - getSummonCount(c.id) }));
 }
 
 function filteredAtoms() {
@@ -430,6 +447,10 @@ function compoundCard(c, mode) {
     ? `<img src="${c.image}" alt="${c.name}" class="compound-img" loading="lazy" />`
     : `<div class="compound-img no-img">?</div>`;
 
+  const summonTag = (c.summonRemaining !== undefined && c.summonRemaining < MAX_SUMMON)
+    ? `<span class="summon-remaining">残り${c.summonRemaining}体</span>`
+    : '';
+
   let extraHtml = '';
   if (mode === 'almost' || mode === 'unavailable') {
     const missingStr = Object.entries(c.missing)
@@ -445,13 +466,14 @@ function compoundCard(c, mode) {
   const impossibleClass = isImpossible ? ' impossible' : '';
 
   return `
-    <li class="compound-card ${mode}${impossibleClass}">
+    <li class="compound-card ${mode}${impossibleClass}" data-id="${c.id}">
       ${imgHtml}
       <div class="compound-body">
         <span class="compound-name">${c.name}${todoMark}</span>
         <div class="compound-sub">
           <span class="compound-formula">${c.formula}</span>
           ${packBadge}
+          ${summonTag}
         </div>
         ${getBtn}
         ${extraHtml}
@@ -474,6 +496,50 @@ function renderReverseSearch(query) {
     return;
   }
   resultEl.innerHTML = found.map((c) => compoundCard(c, 'search')).join('');
+}
+
+// --- 化合物詳細モーダル ---
+
+function openDetailModal(compoundId) {
+  const compound = compounds.find(c => c.id === compoundId);
+  if (!compound) return;
+
+  const imgHtml = compound.image
+    ? `<img src="${compound.image}" alt="${compound.name}" class="detail-img" />`
+    : `<div class="detail-img no-img">?</div>`;
+
+  const elementsHtml = Object.entries(compound.elements)
+    .map(([el, n]) => `<span class="detail-el"><span class="detail-el-sym">${el}</span><span class="detail-el-n">×${n}</span></span>`)
+    .join('');
+
+  const summonCount = getSummonCount(compoundId);
+  const remaining = MAX_SUMMON - summonCount;
+  const summonHtml = summonCount > 0
+    ? `<p class="detail-summon-remaining">残り${remaining}体召喚可能</p>`
+    : '';
+
+  document.getElementById('detail-content').innerHTML = `
+    <div class="detail-content-inner">
+      <div class="detail-img-wrap">${imgHtml}</div>
+      <div class="detail-info">
+        <h2 class="detail-name">${compound.name}</h2>
+        ${compound.reading ? `<p class="detail-reading">${compound.reading}</p>` : ''}
+        <p class="detail-formula">${compound.formula}</p>
+        <div class="detail-divider"></div>
+        <div class="detail-pts-row">
+          <span class="detail-pts">${compound.points}</span>
+          <span class="detail-pts-label">pt</span>
+        </div>
+        <div>
+          <p class="detail-elements-label">必要な原子</p>
+          <div class="detail-elements">${elementsHtml}</div>
+        </div>
+        ${summonHtml}
+      </div>
+    </div>
+  `;
+
+  document.getElementById('detail-modal').hidden = false;
 }
 
 // --- 永続化 ---

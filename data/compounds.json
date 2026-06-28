@@ -5,9 +5,12 @@
     "points": 2,
     "name": "水素",
     "formula": "H2",
-    "elements": { "H": 2 },
+    "elements": {
+      "H": 2
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/H2.jpeg"
+    "image": "assets/Atomon_basic/Compounds/H2.jpeg",
+    "reading": "すいそ"
   },
   {
     "id": "methane",
@@ -15,9 +18,13 @@
     "points": 16,
     "name": "メタン",
     "formula": "CH4",
-    "elements": { "C": 1, "H": 4 },
+    "elements": {
+      "C": 1,
+      "H": 4
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/CH4.jpeg"
+    "image": "assets/Atomon_basic/Compounds/CH4.jpeg",
+    "reading": "めたん"
   },
   {
     "id": "ammonia",
@@ -25,9 +32,13 @@
     "points": 17,
     "name": "アンモニア",
     "formula": "NH3",
-    "elements": { "N": 1, "H": 3 },
+    "elements": {
+      "N": 1,
+      "H": 3
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/NH3.jpeg"
+    "image": "assets/Atomon_basic/Compounds/NH3.jpeg",
+    "reading": "あんもにあ"
   },
   {
     "id": "water",
@@ -35,9 +46,13 @@
     "points": 18,
     "name": "水",
     "formula": "H2O",
-    "elements": { "H": 2, "O": 1 },
+    "elements": {
+      "H": 2,
+      "O": 1
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/H2O.jpeg"
+    "image": "assets/Atomon_basic/Compounds/H2O.jpeg",
+    "reading": "みず"
   },
   {
     "id": "hydrogen_fluoride",
@@ -45,9 +60,13 @@
     "points": 20,
     "name": "フッ化水素",
     "formula": "HF",
-    "elements": { "H": 1, "F": 1 },
+    "elements": {
+      "H": 1,
+      "F": 1
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/HF.png"
+    "image": "assets/Atomon_purple/Compounds/HF.png",
+    "reading": "ふっかすいそ"
   },
   {
     "id": "beryllium_oxide",
@@ -55,9 +74,13 @@
     "points": 25,
     "name": "酸化ベリリウム",
     "formula": "BeO",
-    "elements": { "Be": 1, "O": 1 },
+    "elements": {
+      "Be": 1,
+      "O": 1
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/BeO.png"
+    "image": "assets/Atomon_purple/Compounds/BeO.png",
+    "reading": "さんかべりりうむ"
   },
   {
     "id": "acetylene",
@@ -65,9 +88,13 @@
     "points": 26,
     "name": "アセチレン",
     "formula": "C2H2",
-    "elements": { "C": 2, "H": 2 },
+    "elements": {
+      "C": 2,
+      "H": 2
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/C2H2.jpeg"
+    "image": "assets/Atomon_basic/Compounds/C2H2.jpeg",
+    "reading": "あせちれん"
   },
   {
     "id": "hydrogen_cyanide",
@@ -75,9 +102,14 @@
     "points": 27,
     "name": "シアン化水素",
     "formula": "HCN",
-    "elements": { "H": 1, "C": 1, "N": 1 },
+    "elements": {
+      "H": 1,
+      "C": 1,
+      "N": 1
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/HCN.jpeg"
+    "image": "assets/Atomon_basic/Compounds/HCN.jpeg",
+    "reading": "しあんかすいそ"
   },
   {
     "id": "nitrogen",
@@ -85,9 +117,12 @@
     "points": 28,
     "name": "窒素",
     "formula": "N2",
-    "elements": { "N": 2 },
+    "elements": {
+      "N": 2
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/N2.jpeg"
+    "image": "assets/Atomon_basic/Compounds/N2.jpeg",
+    "reading": "ちっそ"
   },
   {
     "id": "carbon_monoxide",
@@ -95,9 +130,13 @@
     "points": 28,
     "name": "一酸化炭素",
     "formula": "CO",
-    "elements": { "C": 1, "O": 1 },
+    "elements": {
+      "C": 1,
+      "O": 1
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/CO.jpeg"
+    "image": "assets/Atomon_basic/Compounds/CO.jpeg",
+    "reading": "いっさんかたんそ"
   },
   {
     "id": "nitric_oxide",
@@ -105,9 +144,13 @@
     "points": 30,
     "name": "一酸化窒素",
     "formula": "NO",
-    "elements": { "N": 1, "O": 1 },
+    "elements": {
+      "N": 1,
+      "O": 1
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/NO.jpeg"
+    "image": "assets/Atomon_basic/Compounds/NO.jpeg",
+    "reading": "いっさんかちっそ"
   },
   {
     "id": "oxygen",
@@ -115,9 +158,12 @@
     "points": 32,
     "name": "酸素",
     "formula": "O2",
-    "elements": { "O": 2 },
+    "elements": {
+      "O": 2
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/O2.jpeg"
+    "image": "assets/Atomon_basic/Compounds/O2.jpeg",
+    "reading": "さんそ"
   },
   {
     "id": "hydrazine",
@@ -125,9 +171,13 @@
     "points": 32,
     "name": "ヒドラジン",
     "formula": "N2H4",
-    "elements": { "N": 2, "H": 4 },
+    "elements": {
+      "N": 2,
+      "H": 4
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/N2H4.jpeg"
+    "image": "assets/Atomon_basic/Compounds/N2H4.jpeg",
+    "reading": "ひどらじん"
   },
   {
     "id": "hydrogen_peroxide",
@@ -135,9 +185,13 @@
     "points": 34,
     "name": "過酸化水素",
     "formula": "H2O2",
-    "elements": { "H": 2, "O": 2 },
+    "elements": {
+      "H": 2,
+      "O": 2
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/H2O2.jpeg"
+    "image": "assets/Atomon_basic/Compounds/H2O2.jpeg",
+    "reading": "かさんかすいそ"
   },
   {
     "id": "hydrogen_sulfide",
@@ -145,9 +199,13 @@
     "points": 34,
     "name": "硫化水素",
     "formula": "H2S",
-    "elements": { "H": 2, "S": 1 },
+    "elements": {
+      "H": 2,
+      "S": 1
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/H2S.jpeg"
+    "image": "assets/Atomon_green/Compounds/H2S.jpeg",
+    "reading": "りゅうかすいそ"
   },
   {
     "id": "hydrogen_chloride",
@@ -155,9 +213,13 @@
     "points": 36,
     "name": "塩化水素",
     "formula": "HCl",
-    "elements": { "H": 1, "Cl": 1 },
+    "elements": {
+      "H": 1,
+      "Cl": 1
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/HCl.jpeg"
+    "image": "assets/Atomon_green/Compounds/HCl.jpeg",
+    "reading": "えんかすいそ"
   },
   {
     "id": "fluorine",
@@ -165,9 +227,12 @@
     "points": 38,
     "name": "フッ素",
     "formula": "F2",
-    "elements": { "F": 2 },
+    "elements": {
+      "F": 2
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/F2.png"
+    "image": "assets/Atomon_purple/Compounds/F2.png",
+    "reading": "ふっそ"
   },
   {
     "id": "sodium_hydroxide",
@@ -175,9 +240,14 @@
     "points": 40,
     "name": "水酸化ナトリウム",
     "formula": "NaOH",
-    "elements": { "Na": 1, "O": 1, "H": 1 },
+    "elements": {
+      "Na": 1,
+      "O": 1,
+      "H": 1
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/NaOH.jpeg"
+    "image": "assets/Atomon_green/Compounds/NaOH.jpeg",
+    "reading": "すいさんかなとりうむ"
   },
   {
     "id": "magnesium_oxide",
@@ -185,9 +255,13 @@
     "points": 40,
     "name": "酸化マグネシウム",
     "formula": "MgO",
-    "elements": { "Mg": 1, "O": 1 },
+    "elements": {
+      "Mg": 1,
+      "O": 1
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/MgO.jpeg"
+    "image": "assets/Atomon_green/Compounds/MgO.jpeg",
+    "reading": "さんかまぐねしうむ"
   },
   {
     "id": "aluminum_nitride",
@@ -195,9 +269,13 @@
     "points": 41,
     "name": "アルミナナイトライド",
     "formula": "AlN",
-    "elements": { "Al": 1, "N": 1 },
+    "elements": {
+      "Al": 1,
+      "N": 1
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/AlN.jpeg"
+    "image": "assets/Atomon_green/Compounds/AlN.jpeg",
+    "reading": "あるみなないとらいど"
   },
   {
     "id": "sodium_fluoride",
@@ -205,9 +283,13 @@
     "points": 42,
     "name": "フッ化ナトリウム",
     "formula": "NaF",
-    "elements": { "Na": 1, "F": 1 },
+    "elements": {
+      "Na": 1,
+      "F": 1
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/NaF.png"
+    "image": "assets/Atomon_purple/Compounds/NaF.png",
+    "reading": "ふっかなとりうむ"
   },
   {
     "id": "carbon_dioxide",
@@ -215,9 +297,13 @@
     "points": 44,
     "name": "二酸化炭素",
     "formula": "CO2",
-    "elements": { "C": 1, "O": 2 },
+    "elements": {
+      "C": 1,
+      "O": 2
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/CO2.jpeg"
+    "image": "assets/Atomon_basic/Compounds/CO2.jpeg",
+    "reading": "にさんかたんそ"
   },
   {
     "id": "nitrogen_dioxide",
@@ -225,9 +311,13 @@
     "points": 46,
     "name": "二酸化窒素",
     "formula": "NO2",
-    "elements": { "N": 1, "O": 2 },
+    "elements": {
+      "N": 1,
+      "O": 2
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/NO2.jpeg"
+    "image": "assets/Atomon_basic/Compounds/NO2.jpeg",
+    "reading": "にさんかちっそ"
   },
   {
     "id": "ozone",
@@ -235,9 +325,12 @@
     "points": 48,
     "name": "オゾン",
     "formula": "O3",
-    "elements": { "O": 3 },
+    "elements": {
+      "O": 3
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/O3.jpeg"
+    "image": "assets/Atomon_basic/Compounds/O3.jpeg",
+    "reading": "おぞん"
   },
   {
     "id": "sodium_cyanide",
@@ -245,9 +338,14 @@
     "points": 49,
     "name": "シアン化ナトリウム",
     "formula": "NaCN",
-    "elements": { "Na": 1, "C": 1, "N": 1 },
+    "elements": {
+      "Na": 1,
+      "C": 1,
+      "N": 1
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/NaCN.jpeg"
+    "image": "assets/Atomon_green/Compounds/NaCN.jpeg",
+    "reading": "しあんかなとりうむ"
   },
   {
     "id": "soap",
@@ -255,9 +353,15 @@
     "points": 52,
     "name": "セッケン",
     "formula": "COHNa",
-    "elements": { "C": 1, "O": 1, "H": 1, "Na": 1 },
+    "elements": {
+      "C": 1,
+      "O": 1,
+      "H": 1,
+      "Na": 1
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/COHNa.jpeg"
+    "image": "assets/Atomon_green/Compounds/COHNa.jpeg",
+    "reading": "せっけん"
   },
   {
     "id": "ammonium_chloride",
@@ -265,9 +369,14 @@
     "points": 53,
     "name": "塩化アンモニウム",
     "formula": "NH4Cl",
-    "elements": { "N": 1, "H": 4, "Cl": 1 },
+    "elements": {
+      "N": 1,
+      "H": 4,
+      "Cl": 1
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/NH4Cl.jpeg"
+    "image": "assets/Atomon_green/Compounds/NH4Cl.jpeg",
+    "reading": "えんかあんもにうむ"
   },
   {
     "id": "calcium_oxide",
@@ -275,9 +384,13 @@
     "points": 56,
     "name": "酸化カルシウム",
     "formula": "CaO",
-    "elements": { "Ca": 1, "O": 1 },
+    "elements": {
+      "Ca": 1,
+      "O": 1
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/CaO.png"
+    "image": "assets/Atomon_purple/Compounds/CaO.png",
+    "reading": "さんかかるしうむ"
   },
   {
     "id": "potassium_hydroxide",
@@ -285,9 +398,14 @@
     "points": 56,
     "name": "水酸化カリウム",
     "formula": "KOH",
-    "elements": { "K": 1, "O": 1, "H": 1 },
+    "elements": {
+      "K": 1,
+      "O": 1,
+      "H": 1
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/KOH.png"
+    "image": "assets/Atomon_purple/Compounds/KOH.png",
+    "reading": "すいさんかかりうむ"
   },
   {
     "id": "sodium_chloride",
@@ -295,9 +413,13 @@
     "points": 58,
     "name": "塩化ナトリウム",
     "formula": "NaCl",
-    "elements": { "Na": 1, "Cl": 1 },
+    "elements": {
+      "Na": 1,
+      "Cl": 1
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/NaCl.jpeg"
+    "image": "assets/Atomon_green/Compounds/NaCl.jpeg",
+    "reading": "えんかなとりうむ"
   },
   {
     "id": "diamond",
@@ -305,9 +427,12 @@
     "points": 60,
     "name": "ダイヤモンド",
     "formula": "C5",
-    "elements": { "C": 5 },
+    "elements": {
+      "C": 5
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/C5.png"
+    "image": "assets/Atomon_basic/Compounds/C5.png",
+    "reading": "だいやもんど"
   },
   {
     "id": "acetic_acid",
@@ -315,9 +440,14 @@
     "points": 60,
     "name": "酢酸",
     "formula": "CH3COOH",
-    "elements": { "C": 2, "H": 4, "O": 2 },
+    "elements": {
+      "C": 2,
+      "H": 4,
+      "O": 2
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/CH3COOH.jpeg"
+    "image": "assets/Atomon_basic/Compounds/CH3COOH.jpeg",
+    "reading": "さくさん"
   },
   {
     "id": "carbonic_acid",
@@ -325,9 +455,14 @@
     "points": 62,
     "name": "炭酸",
     "formula": "H2CO3",
-    "elements": { "H": 2, "C": 1, "O": 3 },
+    "elements": {
+      "H": 2,
+      "C": 1,
+      "O": 3
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/H2CO3.jpeg"
+    "image": "assets/Atomon_basic/Compounds/H2CO3.jpeg",
+    "reading": "たんさん"
   },
   {
     "id": "nitric_acid",
@@ -335,9 +470,14 @@
     "points": 63,
     "name": "硝酸",
     "formula": "HNO3",
-    "elements": { "H": 1, "N": 1, "O": 3 },
+    "elements": {
+      "H": 1,
+      "N": 1,
+      "O": 3
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/HNO3.jpeg"
+    "image": "assets/Atomon_basic/Compounds/HNO3.jpeg",
+    "reading": "しょうさん"
   },
   {
     "id": "sulfur_dioxide",
@@ -345,9 +485,13 @@
     "points": 64,
     "name": "二酸化硫黄",
     "formula": "SO2",
-    "elements": { "S": 1, "O": 2 },
+    "elements": {
+      "S": 1,
+      "O": 2
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/SO2.jpeg"
+    "image": "assets/Atomon_green/Compounds/SO2.jpeg",
+    "reading": "にさんかいおう"
   },
   {
     "id": "potassium_cyanide",
@@ -355,9 +499,14 @@
     "points": 65,
     "name": "シアン化カリウム",
     "formula": "KCN",
-    "elements": { "K": 1, "C": 1, "N": 1 },
+    "elements": {
+      "K": 1,
+      "C": 1,
+      "N": 1
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/KCN.png"
+    "image": "assets/Atomon_purple/Compounds/KCN.png",
+    "reading": "しあんかかりうむ"
   },
   {
     "id": "steel",
@@ -365,9 +514,13 @@
     "points": 68,
     "name": "鋼",
     "formula": "FeC",
-    "elements": { "Fe": 1, "C": 1 },
+    "elements": {
+      "Fe": 1,
+      "C": 1
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/FeC.jpeg"
+    "image": "assets/Atomon_basic/Compounds/FeC.jpeg",
+    "reading": "はがね"
   },
   {
     "id": "chlorine",
@@ -375,9 +528,12 @@
     "points": 71,
     "name": "塩素",
     "formula": "Cl2",
-    "elements": { "Cl": 2 },
+    "elements": {
+      "Cl": 2
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/Cl2.jpeg"
+    "image": "assets/Atomon_green/Compounds/Cl2.jpeg",
+    "reading": "えんそ"
   },
   {
     "id": "iron_oxide_ii",
@@ -385,9 +541,13 @@
     "points": 72,
     "name": "酸化鉄",
     "formula": "FeO",
-    "elements": { "Fe": 1, "O": 1 },
+    "elements": {
+      "Fe": 1,
+      "O": 1
+    },
     "pack": "basic",
-    "image": "assets/Atomon_basic/Compounds/FeO.jpeg"
+    "image": "assets/Atomon_basic/Compounds/FeO.jpeg",
+    "reading": "さんかてつ"
   },
   {
     "id": "beryllium_copper",
@@ -395,9 +555,13 @@
     "points": 73,
     "name": "ベリリウム銅",
     "formula": "BeCu",
-    "elements": { "Be": 1, "Cu": 1 },
+    "elements": {
+      "Be": 1,
+      "Cu": 1
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/BeCu.png"
+    "image": "assets/Atomon_purple/Compounds/BeCu.png",
+    "reading": "べりりうむどう"
   },
   {
     "id": "calcium_hydroxide",
@@ -405,9 +569,14 @@
     "points": 74,
     "name": "水酸化カルシウム",
     "formula": "Ca(OH)2",
-    "elements": { "Ca": 1, "O": 2, "H": 2 },
+    "elements": {
+      "Ca": 1,
+      "O": 2,
+      "H": 2
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/CaOH2.png"
+    "image": "assets/Atomon_purple/Compounds/CaOH2.png",
+    "reading": "すいさんかかるしうむ"
   },
   {
     "id": "potassium_chloride",
@@ -415,9 +584,13 @@
     "points": 75,
     "name": "塩化カリウム",
     "formula": "KCl",
-    "elements": { "K": 1, "Cl": 1 },
+    "elements": {
+      "K": 1,
+      "Cl": 1
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/KCl.png"
+    "image": "assets/Atomon_purple/Compounds/KCl.png",
+    "reading": "えんかかりうむ"
   },
   {
     "id": "carbon_disulfide",
@@ -425,9 +598,13 @@
     "points": 76,
     "name": "二硫化炭素",
     "formula": "CS2",
-    "elements": { "C": 1, "S": 2 },
+    "elements": {
+      "C": 1,
+      "S": 2
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/CS2.jpeg"
+    "image": "assets/Atomon_green/Compounds/CS2.jpeg",
+    "reading": "にりゅうかたんそ"
   },
   {
     "id": "calcium_fluoride",
@@ -435,9 +612,13 @@
     "points": 78,
     "name": "フッ化カルシウム",
     "formula": "CaF2",
-    "elements": { "Ca": 1, "F": 2 },
+    "elements": {
+      "Ca": 1,
+      "F": 2
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/CaF2.png"
+    "image": "assets/Atomon_purple/Compounds/CaF2.png",
+    "reading": "ふっかかるしうむ"
   },
   {
     "id": "beryllium_chloride",
@@ -445,9 +626,13 @@
     "points": 80,
     "name": "塩化ベリリウム",
     "formula": "BeCl2",
-    "elements": { "Be": 1, "Cl": 2 },
+    "elements": {
+      "Be": 1,
+      "Cl": 2
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/BeCl2.png"
+    "image": "assets/Atomon_purple/Compounds/BeCl2.png",
+    "reading": "えんかべりりうむ"
   },
   {
     "id": "copper_oxide",
@@ -455,9 +640,13 @@
     "points": 80,
     "name": "酸化銅",
     "formula": "CuO",
-    "elements": { "Cu": 1, "O": 1 },
+    "elements": {
+      "Cu": 1,
+      "O": 1
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/CuO.jpeg"
+    "image": "assets/Atomon_green/Compounds/CuO.jpeg",
+    "reading": "さんかどう"
   },
   {
     "id": "sulfur_trioxide",
@@ -465,9 +654,13 @@
     "points": 80,
     "name": "三酸化硫黄",
     "formula": "SO3",
-    "elements": { "S": 1, "O": 3 },
+    "elements": {
+      "S": 1,
+      "O": 3
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/SO3.jpeg"
+    "image": "assets/Atomon_green/Compounds/SO3.jpeg",
+    "reading": "さんさんかいおう"
   },
   {
     "id": "zinc_oxide",
@@ -475,9 +668,13 @@
     "points": 81,
     "name": "酸化亜鉛",
     "formula": "ZnO",
-    "elements": { "Zn": 1, "O": 1 },
+    "elements": {
+      "Zn": 1,
+      "O": 1
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/ZnO.png"
+    "image": "assets/Atomon_purple/Compounds/ZnO.png",
+    "reading": "さんかあえん"
   },
   {
     "id": "sodium_bicarbonate",
@@ -485,9 +682,15 @@
     "points": 84,
     "name": "炭酸水素ナトリウム",
     "formula": "NaHCO3",
-    "elements": { "Na": 1, "H": 1, "C": 1, "O": 3 },
+    "elements": {
+      "Na": 1,
+      "H": 1,
+      "C": 1,
+      "O": 3
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/NaHCO3.jpeg"
+    "image": "assets/Atomon_green/Compounds/NaHCO3.jpeg",
+    "reading": "たんさんすいそなとりうむ"
   },
   {
     "id": "iron_sulfide_ii",
@@ -495,9 +698,13 @@
     "points": 88,
     "name": "硫化鉄(II)",
     "formula": "FeS",
-    "elements": { "Fe": 1, "S": 1 },
+    "elements": {
+      "Fe": 1,
+      "S": 1
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/FeS.jpeg"
+    "image": "assets/Atomon_green/Compounds/FeS.jpeg",
+    "reading": "りゅうかてつ"
   },
   {
     "id": "nigari",
@@ -505,9 +712,13 @@
     "points": 95,
     "name": "にがり",
     "formula": "MgCl2",
-    "elements": { "Mg": 1, "Cl": 2 },
+    "elements": {
+      "Mg": 1,
+      "Cl": 2
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/MgCl2.jpeg"
+    "image": "assets/Atomon_green/Compounds/MgCl2.jpeg",
+    "reading": "にがり"
   },
   {
     "id": "zinc_sulfide",
@@ -515,9 +726,13 @@
     "points": 97,
     "name": "硫化亜鉛",
     "formula": "ZnS",
-    "elements": { "Zn": 1, "S": 1 },
+    "elements": {
+      "Zn": 1,
+      "S": 1
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/ZnS.png"
+    "image": "assets/Atomon_purple/Compounds/ZnS.png",
+    "reading": "りゅうかあえん"
   },
   {
     "id": "sulfuric_acid",
@@ -525,9 +740,14 @@
     "points": 98,
     "name": "硫酸",
     "formula": "H2SO4",
-    "elements": { "H": 2, "S": 1, "O": 4 },
+    "elements": {
+      "H": 2,
+      "S": 1,
+      "O": 4
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/H2SO4.jpeg"
+    "image": "assets/Atomon_green/Compounds/H2SO4.jpeg",
+    "reading": "りゅうさん"
   },
   {
     "id": "ptfe",
@@ -535,9 +755,13 @@
     "points": 100,
     "name": "ポリテトラフルオロエチレン",
     "formula": "C2F4",
-    "elements": { "C": 2, "F": 4 },
+    "elements": {
+      "C": 2,
+      "F": 4
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/C2F4.png"
+    "image": "assets/Atomon_purple/Compounds/C2F4.png",
+    "reading": "ぽりてとらふるおろえちれん"
   },
   {
     "id": "calcium_carbonate",
@@ -545,9 +769,14 @@
     "points": 100,
     "name": "炭酸カルシウム",
     "formula": "CaCO3",
-    "elements": { "Ca": 1, "C": 1, "O": 3 },
+    "elements": {
+      "Ca": 1,
+      "C": 1,
+      "O": 3
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/CaCO3.png"
+    "image": "assets/Atomon_purple/Compounds/CaCO3.png",
+    "reading": "たんさんかるしうむ"
   },
   {
     "id": "potassium_nitrate",
@@ -555,19 +784,28 @@
     "points": 101,
     "name": "硝酸カリウム",
     "formula": "KNO3",
-    "elements": { "K": 1, "N": 1, "O": 3 },
+    "elements": {
+      "K": 1,
+      "N": 1,
+      "O": 3
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/KNO3.png"
+    "image": "assets/Atomon_purple/Compounds/KNO3.png",
+    "reading": "しょうさんかりうむ"
   },
   {
     "id": "aluminum_oxide",
     "number": 102,
     "points": 102,
-    "name": "酸化アルミニウム",
+    "name": "アルミナ",
     "formula": "Al2O3",
-    "elements": { "Al": 2, "O": 3 },
+    "elements": {
+      "Al": 2,
+      "O": 3
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/Al2O3.jpeg"
+    "image": "assets/Atomon_green/Compounds/Al2O3.jpeg",
+    "reading": "あるみな"
   },
   {
     "id": "sodium_carbonate",
@@ -575,9 +813,14 @@
     "points": 106,
     "name": "炭酸ナトリウム",
     "formula": "Na2CO3",
-    "elements": { "Na": 2, "C": 1, "O": 3 },
+    "elements": {
+      "Na": 2,
+      "C": 1,
+      "O": 3
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/Na2CO3.jpeg"
+    "image": "assets/Atomon_green/Compounds/Na2CO3.jpeg",
+    "reading": "たんさんなとりうむ"
   },
   {
     "id": "freon_12",
@@ -585,9 +828,14 @@
     "points": 121,
     "name": "フロンガス",
     "formula": "CCl2F2",
-    "elements": { "C": 1, "Cl": 2, "F": 2 },
+    "elements": {
+      "C": 1,
+      "Cl": 2,
+      "F": 2
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/CCl2F2.png"
+    "image": "assets/Atomon_purple/Compounds/CCl2F2.png",
+    "reading": "ふろんがす"
   },
   {
     "id": "iron_chloride_ii",
@@ -595,9 +843,13 @@
     "points": 127,
     "name": "塩化鉄(II)",
     "formula": "FeCl2",
-    "elements": { "Fe": 1, "Cl": 2 },
+    "elements": {
+      "Fe": 1,
+      "Cl": 2
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/FeCl2.jpeg"
+    "image": "assets/Atomon_green/Compounds/FeCl2.jpeg",
+    "reading": "えんかてつ"
   },
   {
     "id": "brass",
@@ -605,9 +857,13 @@
     "points": 129,
     "name": "真鍮",
     "formula": "CuZn",
-    "elements": { "Cu": 1, "Zn": 1 },
+    "elements": {
+      "Cu": 1,
+      "Zn": 1
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/ZnCu.png"
+    "image": "assets/Atomon_purple/Compounds/ZnCu.png",
+    "reading": "しんちゅう"
   },
   {
     "id": "aluminum_chloride",
@@ -615,9 +871,13 @@
     "points": 133,
     "name": "塩化アルミニウム",
     "formula": "AlCl3",
-    "elements": { "Al": 1, "Cl": 3 },
+    "elements": {
+      "Al": 1,
+      "Cl": 3
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/AlCl3.jpeg"
+    "image": "assets/Atomon_green/Compounds/AlCl3.jpeg",
+    "reading": "えんかあるみにうむ"
   },
   {
     "id": "copper_chloride_ii",
@@ -625,9 +885,13 @@
     "points": 134,
     "name": "塩化銅",
     "formula": "CuCl2",
-    "elements": { "Cu": 1, "Cl": 2 },
+    "elements": {
+      "Cu": 1,
+      "Cl": 2
+    },
     "pack": "green",
-    "image": "assets/Atomon_green/Compounds/CuCl2.jpeg"
+    "image": "assets/Atomon_green/Compounds/CuCl2.jpeg",
+    "reading": "えんかどう"
   },
   {
     "id": "zinc_chloride",
@@ -635,9 +899,13 @@
     "points": 136,
     "name": "塩化亜鉛",
     "formula": "ZnCl2",
-    "elements": { "Zn": 1, "Cl": 2 },
+    "elements": {
+      "Zn": 1,
+      "Cl": 2
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/ZnCl2.png"
+    "image": "assets/Atomon_purple/Compounds/ZnCl2.png",
+    "reading": "えんかあえん"
   },
   {
     "id": "potassium_carbonate",
@@ -645,8 +913,13 @@
     "points": 138,
     "name": "炭酸カリウム",
     "formula": "K2CO3",
-    "elements": { "K": 2, "C": 1, "O": 3 },
+    "elements": {
+      "K": 2,
+      "C": 1,
+      "O": 3
+    },
     "pack": "purple",
-    "image": "assets/Atomon_purple/Compounds/K2CO3.png"
+    "image": "assets/Atomon_purple/Compounds/K2CO3.png",
+    "reading": "たんさんかりうむ"
   }
 ]
