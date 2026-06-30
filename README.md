@@ -41,6 +41,12 @@ atommonsters-helper/
 3. **化合物リスト確認** — 作れる化合物が上位に表示される
 4. **召喚済みチェック** — 入手した化合物にチェックを入れて管理
 
+## デプロイ
+
+```sh
+vercel ~/Documents/GitHub/atommonsters-helper --prod
+```
+
 ## 動作環境
 
 モダンブラウザ（Chrome / Safari / Firefox）でそのまま動作します。サーバー不要、ローカルファイルとして開いても動きます。
