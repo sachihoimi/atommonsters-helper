@@ -8,6 +8,7 @@ import {
   searchByElements,
   getMissingElements,
 } from './logic.js';
+import { initPeriodicPage } from './periodic.js';
 
 const LONG_PRESS_MS = 500;
 const STORAGE_KEY = 'atommonsters_inventory';
@@ -42,6 +43,7 @@ let gottenCompounds = [];
 let activePack      = 'purple';
 const almostThreshold = 99;
 const MAX_SUMMON = 2;
+let _lastAvailableRender = { items: [], msg: '', cls: '' };
 
 // --- 初期化 ---
 
@@ -60,15 +62,50 @@ async function init() {
   if (savedPack)   activePack = savedPack;
   if (savedGotten) try { gottenCompounds = JSON.parse(savedGotten); } catch { gottenCompounds = []; }
 
-  // パック選択
+  // パック選択（デスクトップ select）
   const packSelect = document.getElementById('pack-select');
   packSelect.value = activePack;
   packSelect.addEventListener('change', () => {
     activePack = packSelect.value;
     localStorage.setItem(PACK_KEY, activePack);
+    syncPackCheckboxes();
     renderAtomButtons();
     renderResults();
   });
+
+  // パック選択（SP チェックボックス）
+  function syncPackCheckboxes() {
+    const green  = document.getElementById('sp-pack-green');
+    const purple = document.getElementById('sp-pack-purple');
+    if (!green || !purple) return;
+    green.checked  = activePack === 'green'  || activePack === 'purple';
+    purple.checked = activePack === 'purple';
+  }
+  function applyPackChange() {
+    packSelect.value = activePack;
+    localStorage.setItem(PACK_KEY, activePack);
+    renderAtomButtons();
+    renderResults();
+  }
+  document.getElementById('sp-pack-green').addEventListener('change', (e) => {
+    if (e.target.checked) {
+      activePack = 'green';
+    } else {
+      activePack = 'basic';
+      document.getElementById('sp-pack-purple').checked = false;
+    }
+    applyPackChange();
+  });
+  document.getElementById('sp-pack-purple').addEventListener('change', (e) => {
+    if (e.target.checked) {
+      activePack = 'purple';
+      document.getElementById('sp-pack-green').checked = true;
+    } else {
+      activePack = document.getElementById('sp-pack-green').checked ? 'green' : 'basic';
+    }
+    applyPackChange();
+  });
+  syncPackCheckboxes();
 
   // 逆引き
   document.getElementById('search-input').addEventListener('input', (e) => {
@@ -76,7 +113,7 @@ async function init() {
   });
 
   // ゲットする
-  document.getElementById('available-list').addEventListener('click', (e) => {
+  document.addEventListener('click', (e) => {
     const btn = e.target.closest('.get-btn');
     if (btn) getCompound(btn.dataset.id);
   });
@@ -98,6 +135,8 @@ async function init() {
   }
 
   document.getElementById('gotten-btn').addEventListener('click', openGottenModal);
+  document.getElementById('gotten-btn-sp').addEventListener('click', openGottenModal);
+  document.getElementById('reset-btn-sp').addEventListener('click', () => document.getElementById('reset-btn').click());
   document.getElementById('modal-close').addEventListener('click', () => { gottenModal.hidden = true; });
   gottenModal.addEventListener('click', (e) => { if (e.target === gottenModal) gottenModal.hidden = true; });
 
@@ -118,7 +157,6 @@ async function init() {
     const item = e.target.closest('[data-action]');
     if (!item) return;
     menuDropdown.hidden = true;
-    if (item.dataset.action === 'gotten') openGottenModal();
     if (item.dataset.action === 'init')   openConfirmModal();
     if (item.dataset.action === 'theme')  cycleTheme();
   });
@@ -143,6 +181,7 @@ async function init() {
   const detailModal = document.getElementById('detail-modal');
   document.getElementById('detail-close').addEventListener('click', () => { detailModal.hidden = true; });
   detailModal.addEventListener('click', (e) => { if (e.target === detailModal) detailModal.hidden = true; });
+
   document.addEventListener('click', (e) => {
     const card = e.target.closest('.compound-card');
     if (!card || e.target.closest('button')) return;
@@ -153,6 +192,60 @@ async function init() {
   renderAtomButtons();
   renderResults();
   updateGottenBadge();
+
+  // 周期表ページトグル
+  const periodicPage = document.getElementById('periodic-page');
+  const mainLayout   = document.querySelector('.main-layout');
+  document.getElementById('periodic-toggle').addEventListener('click', () => {
+    const show = periodicPage.hidden;
+    periodicPage.hidden = !show;
+    mainLayout.style.display = show ? 'none' : '';
+    if (show) initPeriodicPage(atoms);
+  });
+
+  // スティッキーバッジ → ドロワー開閉
+  const stickyBadge = document.getElementById('sticky-badge');
+  const availDrawer  = document.getElementById('avail-drawer');
+
+  // SP時: result-panel をドロワー内に移動
+  if (window.innerWidth < 640) {
+    const resultPanel  = document.querySelector('.result-panel');
+    const drawerSheet  = document.getElementById('avail-drawer-sheet');
+    if (resultPanel && drawerSheet) drawerSheet.appendChild(resultPanel);
+  }
+
+  function openAvailDrawer() {
+    availDrawer.classList.remove('closing');
+    availDrawer.classList.add('open');
+  }
+  function closeAvailDrawer() {
+    availDrawer.classList.add('closing');
+    availDrawer.addEventListener('transitionend', () => {
+      availDrawer.classList.remove('open', 'closing');
+    }, { once: true });
+  }
+
+  stickyBadge.addEventListener('click', openAvailDrawer);
+  document.getElementById('avail-drawer-overlay').addEventListener('click', closeAvailDrawer);
+}
+
+const BADGE_LABELS = {
+  empty:      'タップして！',
+  available:  '取れるよ！',
+  almost:     'めくれるよ！',
+  bust:       'バトンタッチ',
+  impossible: 'おしまい…',
+};
+
+function updateStickyBadge(count, state = 'empty') {
+  const badge = document.getElementById('sticky-badge');
+  const label = document.getElementById('sticky-label');
+  const el    = document.getElementById('sticky-count');
+  if (label) label.textContent = BADGE_LABELS[state] ?? '';
+  if (el) el.textContent = count;
+  if (badge) {
+    badge.className = `sticky-badge badge-${state}`;
+  }
 }
 
 // --- デッキ残数 ---
@@ -202,12 +295,18 @@ function getSummonCount(id) {
 
 function filteredCompounds() {
   return compounds
-    .filter(c => isPackEnabled(c.pack) && getSummonCount(c.id) < MAX_SUMMON)
-    .map(c => ({ ...c, summonRemaining: MAX_SUMMON - getSummonCount(c.id) }));
+    .filter(c => isPackEnabled(c.pack))
+    .map(c => {
+      const count = getSummonCount(c.id);
+      return { ...c, summonRemaining: MAX_SUMMON - count, exhausted: count >= MAX_SUMMON };
+    });
 }
 
 function filteredAtoms() {
-  return atoms.filter(a => isPackEnabled(a.pack));
+  const max = getMaxInventory();
+  return atoms
+    .filter(a => isPackEnabled(a.pack))
+    .sort((a, b) => (max[b.symbol] ?? 0) - (max[a.symbol] ?? 0));
 }
 
 // --- 原子ボタン描画 ---
@@ -312,7 +411,7 @@ function getCompound(compoundId) {
 
 function updateGottenBadge() {
   const n = gottenCompounds.length;
-  for (const id of ['gotten-count', 'menu-gotten-count']) {
+  for (const id of ['gotten-count', 'menu-gotten-count', 'gotten-count-sp']) {
     const el = document.getElementById(id);
     if (el) { el.textContent = n; el.classList.toggle('hidden', n === 0); }
   }
@@ -382,23 +481,30 @@ function updateAllRemaining() {
 function renderResults() {
   const norm = normalizeInventory(inventory);
   const visible = filteredCompounds();
+  const exhausted = visible.filter(c => c.exhausted);
+  const active    = visible.filter(c => !c.exhausted);
   const { available, almostCraftable, unavailable } = classifyCompounds(
-    visible, norm, almostThreshold
+    active, norm, almostThreshold
   );
+  const allUnavailable = unavailable;
+  const allAvailable = [
+    ...available,
+    ...exhausted.map(c => ({ ...c, shortage: 0, missing: {} })),
+  ];
 
   const remaining = computeRemainingAtoms();
   updateAllRemaining();
 
-  const markImpossible = (list) => list.map(c => ({
+  const markImpossible = (list) => list.map(c => c.exhausted ? c : ({
     ...c,
     impossible: !isPossibleWithRemaining(c, norm, remaining),
   }));
 
   const hasInventory = Object.values(inventory).some(n => n > 0);
-  const isBust = hasInventory && available.length === 0 &&
+  const isBust = hasInventory && allAvailable.length === 0 &&
     almostCraftable.every(c => !isPossibleWithRemaining(c, norm, remaining));
-  const allImpossible = visible.length > 0 &&
-    visible.every(c => !isPossibleWithRemaining(c, norm, remaining));
+  const allImpossible = active.length > 0 &&
+    active.every(c => !isPossibleWithRemaining(c, norm, remaining));
 
   let availableMsg, availableClass;
   if (allImpossible) {
@@ -422,12 +528,20 @@ function renderResults() {
   sectionAvailable.classList.toggle('section-can-take', available.length > 0);
   sectionAvailable.classList.toggle('section-bust', isBust);
 
-  renderSection('available-list', markImpossible(available), 'available', availableMsg, availableClass);
-  renderSection('almost-list', markImpossible(almostCraftable), 'almost');
-  renderSection('unavailable-list', markImpossible(unavailable), 'unavailable');
+  const markedAvailable = markImpossible(allAvailable);
+  renderSection('available-list',   markedAvailable, 'available', availableMsg, availableClass);
+  renderSection('almost-list',      markImpossible(almostCraftable), 'almost');
+  renderSection('unavailable-list', markImpossible(allUnavailable), 'unavailable');
 
   document.getElementById('available-count').textContent = available.length;
   document.getElementById('almost-count').textContent   = almostCraftable.length;
+  const badgeState = !hasInventory   ? 'empty'
+    : allImpossible                  ? 'impossible'
+    : isBust                         ? 'bust'
+    : available.length > 0           ? 'available'
+    : almostCraftable.length > 0     ? 'almost'
+    :                                  'empty';
+  updateStickyBadge(available.length, badgeState);
 }
 
 function renderSection(containerId, items, mode, emptyMsg = 'なし', emptyClass = '') {
@@ -440,6 +554,7 @@ function renderSection(containerId, items, mode, emptyMsg = 'なし', emptyClass
 }
 
 function compoundCard(c, mode) {
+  if (c.exhausted) mode = 'unavailable';
   const isImpossible = c.impossible === true;
   const packBadge = `<span class="pack-badge pack-${c.pack}">${c.pack}</span>`;
   const todoMark  = c.todo ? '<span class="todo-mark">?</span>' : '';
@@ -460,7 +575,7 @@ function compoundCard(c, mode) {
     extraHtml = `<div class="missing-info"><span class="missing-label">足りない:</span>${missingStr}</div>`;
   }
 
-  const getBtn = (mode === 'available' && !isImpossible)
+  const getBtn = (!c.exhausted && mode === 'available' && !isImpossible)
     ? `<button class="get-btn" data-id="${c.id}">召喚する</button>`
     : '';
 

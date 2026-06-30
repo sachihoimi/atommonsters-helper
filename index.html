@@ -3,10 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ATOMMONSTERS Helper｜アトモンスターズ 化合物検索ツール</title>
+  <meta name="description" content="ボードゲーム「アトモンスターズ」の非公式ファンツール。手元の原子カードを選ぶと作れる化合物が瞬時にわかります。元素周期表・イラスト表示にも対応。" />
+  <meta name="keywords" content="アトモンスターズ, ATOMMONSTERS, 化合物, 検索, 周期表, ボードゲーム, カードゲーム, ヘルパー, ツール" />
+  <meta name="author" content="u_vf3" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sachihoimi.github.io/atommonsters-helper/" />
+
+  <!-- OGP -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sachihoimi.github.io/atommonsters-helper/" />
+  <meta property="og:title" content="ATOMMONSTERS Helper｜アトモンスターズ 化合物検索ツール" />
+  <meta property="og:description" content="手元の原子カードを選ぶと作れる化合物が瞬時にわかる、アトモンスターズ非公式ファンツール。元素周期表・イラスト表示にも対応。" />
+  <meta property="og:image" content="https://sachihoimi.github.io/atommonsters-helper/og-image.png" />
+  <meta property="og:site_name" content="ATOMMONSTERS Helper" />
+  <meta property="og:locale" content="ja_JP" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="ATOMMONSTERS Helper｜アトモンスターズ 化合物検索ツール" />
+  <meta name="twitter:description" content="手元の原子カードを選ぶと作れる化合物が瞬時にわかる、アトモンスターズ非公式ファンツール。" />
+  <meta name="twitter:image" content="https://sachihoimi.github.io/atommonsters-helper/og-image.png" />
+  <meta name="twitter:creator" content="@u_vf3" />
+
   <meta name="theme-color" content="#080812" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <title>ATOMMONSTERS Helper</title>
+  <meta name="apple-mobile-web-app-title" content="AtomHelper" />
   <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="assets/Atomon_image/icon-b.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/Atomon_image/icon-b.png" />
   <link rel="stylesheet" href="css/style.css" />
   <script>(function(){var t=localStorage.getItem('atommonsters_theme');if(t)document.documentElement.dataset.theme=t;})()</script>
 </head>
@@ -16,8 +42,10 @@
 <header class="app-header">
   <div class="header-inner">
     <h1 class="app-title">
-      <img src="./assets/Atomon_image/icon-b.png" alt="" class="header-icon" />
-      ATOMON HELPER
+      <button id="periodic-toggle" class="periodic-toggle-btn" title="周期表">
+        <img src="./assets/Atomon_image/icon-b.png" alt="" class="header-icon" />
+      </button>
+      <span class="app-title-text">ATOMON HELPER</span>
     </h1>
     <div class="header-right">
       <!-- タブレット/PC のみ表示 -->
@@ -34,6 +62,10 @@
         <option value="purple">＋Purple</option>
       </select>
       <!-- SP のみ表示 -->
+      <button id="reset-btn-sp" class="header-btn sp-only danger">リセット</button>
+      <button id="gotten-btn-sp" class="header-btn sp-only">
+        召喚済み<span id="gotten-count-sp" class="gotten-badge hidden">0</span>
+      </button>
       <button id="menu-btn" class="header-btn menu-only">☰</button>
     </div>
   </div>
@@ -45,8 +77,12 @@
   <!-- 左パネル: 原子選択 -->
   <aside class="atom-panel">
     <div class="panel-head">
-      <h2 class="panel-title"><span>👆</span> めくった原子をタップして！</h2>
+      <h2 class="panel-title"><span>👆</span> めくった原子をタップ！</h2>
       <button id="reset-btn" class="reset-btn">リセット</button>
+      <button id="sticky-badge" class="sticky-badge">
+        <span id="sticky-label">取れるよ！</span>
+        <span id="sticky-count" class="sticky-count">0</span>
+      </button>
     </div>
     <div id="atom-buttons" class="atom-grid"></div>
   </aside>
@@ -115,9 +151,18 @@
 
 <!-- SP メニュードロップダウン -->
 <div id="menu-dropdown" class="menu-dropdown" hidden>
-  <button class="menu-item" data-action="gotten">
-    召喚済みリスト<span id="menu-gotten-count" class="gotten-badge hidden">0</span>
-  </button>
+  <div class="menu-pack-section">
+    <span class="menu-pack-label">パック</span>
+    <label class="menu-check-item">
+      <input type="checkbox" checked disabled> Basic
+    </label>
+    <label class="menu-check-item">
+      <input type="checkbox" id="sp-pack-green"> ＋Green
+    </label>
+    <label class="menu-check-item">
+      <input type="checkbox" id="sp-pack-purple"> ＋Purple
+    </label>
+  </div>
   <button class="menu-item" data-action="theme">🎨 テーマ切替</button>
   <button class="menu-item danger" data-action="init">初期化</button>
 </div>
@@ -156,10 +201,28 @@
   </div>
 </div>
 
+<!-- 隠しページ: 周期表 -->
+<div id="periodic-page" class="periodic-page" hidden>
+  <div class="periodic-inner">
+    <div class="periodic-scroll">
+      <div id="periodic-grid" class="periodic-grid"></div>
+    </div>
+    <div id="periodic-legend" class="periodic-legend"></div>
+  </div>
+</div>
+
 <footer class="app-footer">
   <p>本ツールはタンキュー株式会社のボードゲーム「アトムモンスターズ」の非公式ファンツールです。ゲームに関する著作権・商標権はすべてタンキュー株式会社に帰属します。</p>
   <p>掲載画像はアトムモンスターズのカード画像を使用しています。権利者からの削除・修正依頼は <a href="https://x.com/u_vf3" target="_blank" rel="noopener">@u_vf3</a> までご連絡ください。速やかに対応いたします。</p>
 </footer>
+
+<!-- SP: 今すぐ取れる！ドロワー -->
+<div id="avail-drawer" class="avail-drawer">
+  <div id="avail-drawer-overlay" class="avail-drawer-overlay"></div>
+  <div class="avail-drawer-sheet" id="avail-drawer-sheet">
+    <div class="avail-drawer-handle"></div>
+  </div>
+</div>
 
 <script type="module" src="js/app.js"></script>
 </body>
