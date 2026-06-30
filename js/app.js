@@ -115,7 +115,9 @@ async function init() {
   // ゲットする
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('.get-btn');
-    if (btn) getCompound(btn.dataset.id);
+    if (!btn) return;
+    getCompound(btn.dataset.id);
+    if (window.innerWidth < 640) closeAvailDrawer();
   });
 
   // 召喚リストモーダル
