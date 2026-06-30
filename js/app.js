@@ -670,3 +670,8 @@ function saveInventory() {
 
 // --- 起動 ---
 init();
+
+// 画像保護
+document.addEventListener('contextmenu', (e) => { if (e.target.tagName === 'IMG') e.preventDefault(); });
+document.addEventListener('dragstart',   (e) => { if (e.target.tagName === 'IMG') e.preventDefault(); });
+document.querySelectorAll('img').forEach(img => img.setAttribute('draggable', 'false'));
