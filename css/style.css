@@ -798,7 +798,7 @@ body {
 
 /* --- 化合物詳細モーダル --- */
 .detail-sheet {
-  max-width: 460px;
+  max-width: 660px;
   padding: 0.6rem 1.25rem 1.5rem;
   gap: 0.6rem;
 }
@@ -855,20 +855,20 @@ body {
 }
 
 .detail-name {
-  font-size: 1.2rem;
+  font-size: 1.45rem;
   font-weight: 900;
   color: var(--text);
   line-height: 1.25;
 }
 
 .detail-reading {
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   margin-top: -0.3rem;
 }
 
 .detail-formula {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: var(--accent);
   font-family: 'Courier New', monospace;
   font-weight: 700;
@@ -887,53 +887,34 @@ body {
 }
 
 .detail-pts {
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   font-weight: 900;
   color: var(--green-col);
   font-variant-numeric: tabular-nums;
 }
 
 .detail-pts-label {
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
-}
-
-.detail-elements-label {
-  font-size: 0.6rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  margin-bottom: 0.3rem;
 }
 
 .detail-elements {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
+  margin-top: 0.1rem;
 }
 
-.detail-el {
-  display: flex;
-  align-items: baseline;
-  gap: 0.1rem;
-  background: var(--surface3);
-  border-radius: 6px;
-  padding: 0.2rem 0.45rem;
+.detail-elements .missing-el {
+  font-size: 1rem;
+  padding: 0.15rem 0.55rem;
 }
 
-.detail-el-sym {
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: var(--text);
-}
-
-.detail-el-n {
-  font-size: 0.65rem;
-  color: var(--text-muted);
+.detail-craftable {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--green-col);
 }
 
 .detail-summon-remaining {
-  font-size: 0.68rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: #ffa000;
   background: rgba(255,160,0,0.12);

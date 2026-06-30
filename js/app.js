@@ -6,6 +6,7 @@ import {
   classifyCompounds,
   normalizeInventory,
   searchByElements,
+  getMissingElements,
 } from './logic.js';
 
 const LONG_PRESS_MS = 500;
@@ -508,9 +509,11 @@ function openDetailModal(compoundId) {
     ? `<img src="${compound.image}" alt="${compound.name}" class="detail-img" />`
     : `<div class="detail-img no-img">?</div>`;
 
-  const elementsHtml = Object.entries(compound.elements)
-    .map(([el, n]) => `<span class="detail-el"><span class="detail-el-sym">${el}</span><span class="detail-el-n">×${n}</span></span>`)
-    .join('');
+  const missing = getMissingElements(compound, normalizeInventory(inventory));
+  const missingEntries = Object.entries(missing);
+  const elementsHtml = missingEntries.length === 0
+    ? '<span class="detail-craftable">揃ってる！</span>'
+    : missingEntries.flatMap(([el, n]) => Array(n).fill(`<span class="missing-el">${el}</span>`)).join('');
 
   const summonCount = getSummonCount(compoundId);
   const remaining = MAX_SUMMON - summonCount;
@@ -530,9 +533,9 @@ function openDetailModal(compoundId) {
           <span class="detail-pts">${compound.points}</span>
           <span class="detail-pts-label">pt</span>
         </div>
-        <div>
-          <p class="detail-elements-label">必要な原子</p>
-          <div class="detail-elements">${elementsHtml}</div>
+        <div class="missing-info detail-elements">
+          <span class="missing-label">足りない:</span>
+          ${elementsHtml}
         </div>
         ${summonHtml}
       </div>
